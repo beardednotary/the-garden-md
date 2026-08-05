@@ -1,5 +1,11 @@
 import type { ToolEntry } from "@/lib/types";
 
+const AMAZON_TAG = "gardenmd-20";
+
+function amazonSearchUrl(query: string) {
+  return `https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${AMAZON_TAG}`;
+}
+
 export const tools: ToolEntry[] = [
   {
     slug: "soil-moisture-meters",
@@ -11,7 +17,8 @@ export const tools: ToolEntry[] = [
     avoidIf: ["You want a substitute for digging and touching the soil"],
     features: ["Long enough probe", "Clear analog dial", "No required battery"],
     description:
-      "Useful for comparing moisture at different depths before watering again. It should supplement a physical soil check, not replace one."
+      "Useful for comparing moisture at different depths before watering again. It should supplement a physical soil check, not replace one.",
+    affiliateUrl: amazonSearchUrl("soil moisture meter")
   },
   {
     slug: "hose-timers",
@@ -23,7 +30,8 @@ export const tools: ToolEntry[] = [
     avoidIf: ["You need zone-by-zone automation beyond a simple faucet setup"],
     features: ["Clear scheduling controls", "Manual override", "Reliable battery compartment"],
     description:
-      "A basic timer helps keep watering consistent, especially for raised beds and containers that dry unevenly."
+      "A basic timer helps keep watering consistent, especially for raised beds and containers that dry unevenly.",
+    affiliateUrl: amazonSearchUrl("garden hose watering timer")
   },
   {
     slug: "bypass-pruners",
@@ -35,7 +43,8 @@ export const tools: ToolEntry[] = [
     avoidIf: ["You need loppers for thick woody stems"],
     features: ["Comfortable grip", "Replaceable blade", "Easy lock"],
     description:
-      "Clean cuts matter when you are removing diseased or crowded growth, especially on plants that need better airflow."
+      "Clean cuts matter when you are removing diseased or crowded growth, especially on plants that need better airflow.",
+    affiliateUrl: amazonSearchUrl("bypass pruning shears")
   },
   {
     slug: "garden-netting",
@@ -47,7 +56,8 @@ export const tools: ToolEntry[] = [
     avoidIf: ["You need heavy-duty wildlife exclusion"],
     features: ["Fine enough mesh", "Easy to secure", "Reusable material"],
     description:
-      "Netting is most useful when it solves a specific pest or animal problem without trapping or crushing the plant."
+      "Netting is most useful when it solves a specific pest or animal problem without trapping or crushing the plant.",
+    affiliateUrl: amazonSearchUrl("garden netting")
   },
   {
     slug: "raised-bed-tools",
@@ -59,6 +69,7 @@ export const tools: ToolEntry[] = [
     avoidIf: ["You only need one specific hand tool"],
     features: ["Sturdy handle", "Rust-resistant head", "Comfortable working height"],
     description:
-      "A small set of dependable bed tools goes further than a large set of low-quality gadgets."
+      "A small set of dependable bed tools goes further than a large set of low-quality gadgets.",
+    affiliateUrl: amazonSearchUrl("raised garden bed tool set")
   }
 ];

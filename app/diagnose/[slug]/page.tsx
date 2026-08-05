@@ -160,6 +160,14 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
                     {tool.name}
                   </Link>
                   <p className="mt-1 text-sm text-muted">{tool.description}</p>
+                  <a
+                    href={tool.affiliateUrl}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    className="mt-1 inline-block text-sm text-green-dark underline-offset-4 hover:underline"
+                  >
+                    Check price on Amazon
+                  </a>
                 </li>
               ))}
             </ul>

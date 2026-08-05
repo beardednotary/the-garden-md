@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { AffiliateButton } from "@/components/AffiliateButton";
 import { FieldNote } from "@/components/FieldNote";
 import { tools, getTool } from "@/lib/content";
 
@@ -26,6 +28,16 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
           <section className="mt-8 grid gap-4 md:grid-cols-2">
             <FieldNote title="Typical Price" body={tool.typicalPrice} />
             <FieldNote title="Best Use" body={tool.useCases[0]} />
+          </section>
+          <section className="mt-6">
+            <AffiliateButton href={tool.affiliateUrl} />
+            <p className="mt-2 text-xs text-muted">
+              As an Amazon Associate we earn from qualifying purchases. See our{" "}
+              <Link href="/affiliate-disclosure" className="underline-offset-4 hover:underline">
+                affiliate disclosure
+              </Link>
+              .
+            </p>
           </section>
           <section className="mt-8 border border-border bg-paper-light p-5 shadow-panel">
             <h2 className="font-serif text-2xl text-green-dark">What to look for</h2>

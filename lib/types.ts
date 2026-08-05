@@ -69,6 +69,7 @@ export type ToolEntry = {
   avoidIf: string[];
   features: string[];
   description: string;
+  affiliateUrl: string;
 };
 
 export type Plant = {

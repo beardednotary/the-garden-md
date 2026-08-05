@@ -101,6 +101,14 @@ export default function HomePage() {
                 </h3>
                 <p className="mt-1 text-sm text-muted">{tool.typicalPrice}</p>
                 <p className="mt-2 text-[15px] leading-7">{tool.description}</p>
+                <a
+                  href={tool.affiliateUrl}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="mt-2 inline-block text-sm text-green-dark underline-offset-4 hover:underline"
+                >
+                  Check price on Amazon
+                </a>
               </li>
             ))}
           </ul>
