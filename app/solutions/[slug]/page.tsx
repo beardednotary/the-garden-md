@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FieldNote } from "@/components/FieldNote";
 import { SidebarPanel } from "@/components/SidebarPanel";
+import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { getSolution, getTool, isDefined, solutions } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -42,6 +43,11 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               ))}
             </ol>
           </section>
+          {solution.video && (
+            <section className="mt-8">
+              <YouTubeEmbed video={solution.video} />
+            </section>
+          )}
         </article>
         <aside className="space-y-5">
           <SidebarPanel title="Helpful Tools">

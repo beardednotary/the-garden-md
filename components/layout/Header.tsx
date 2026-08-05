@@ -21,7 +21,7 @@ export function Header() {
           <Image src="/badge.png" alt="" width={56} height={56} className="h-14 w-14" priority />
           <div>
             <div className="font-serif text-3xl uppercase tracking-[0.14em] text-green-dark">
-              GardenMD
+              Garden MD
             </div>
             <div className="mt-1 text-sm text-muted">
               Practical answers for common garden problems

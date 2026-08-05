@@ -67,7 +67,13 @@ export const causes: Cause[] = [
     ],
     fixes: ["test-garden-soil", "mulch-a-garden-bed"],
     tools: ["raised-bed-tools", "soil-test-kits"],
-    sources: ["src-umn-nutrients"]
+    sources: ["src-umn-nutrients"],
+    image: {
+      src: "/images/diagnose/yellow-leaves-1.jpg",
+      alt: "Uniformly yellowish older citrus leaves next to greener new foliage, a sign of nitrogen deficiency",
+      credit: "Photo: David Rosen, UC IPM",
+      creditUrl: "https://ipm.ucanr.edu/home-and-landscape/common-nutrient-deficiency-symptoms/"
+    }
   },
   {
     slug: "powdery-mildew",
@@ -84,7 +90,13 @@ export const causes: Cause[] = [
     ],
     fixes: ["improve-airflow", "protect-plants-with-netting", "spray-neem-oil"],
     tools: ["bypass-pruners", "garden-netting", "neem-oil"],
-    sources: ["src-ucipm-powdery-mildew"]
+    sources: ["src-ucipm-powdery-mildew"],
+    image: {
+      src: "/images/diagnose/white-powder-on-leaves.jpg",
+      alt: "Phlox leaves covered in white powdery mildew patches",
+      credit: "Photo: Bruce Watt, University of Maine, Bugwood.org (CC BY-NC)",
+      creditUrl: "https://extension.psu.edu/diagnosing-poor-plant-health"
+    }
   },
   {
     slug: "aphids",

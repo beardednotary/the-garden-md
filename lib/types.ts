@@ -11,6 +11,20 @@ export type CauseLink = {
   confidence: number;
 };
 
+export type ContentImage = {
+  /** Path under /public, e.g. "/images/diagnose/yellow-leaves.jpg". Self-hosted only, no hotlinking. */
+  src: string;
+  alt: string;
+  credit?: string;
+  creditUrl?: string;
+};
+
+export type VideoEmbed = {
+  youtubeId: string;
+  title: string;
+  channel?: string;
+};
+
 export type Symptom = {
   slug: string;
   name: string;
@@ -31,6 +45,8 @@ export type Symptom = {
     checkFirst: string;
   }>;
   sources: string[];
+  images?: ContentImage[];
+  video?: VideoEmbed;
 };
 
 export type Cause = {
@@ -44,6 +60,7 @@ export type Cause = {
   fixes: string[];
   tools: string[];
   sources: string[];
+  image?: ContentImage;
 };
 
 export type Solution = {
@@ -57,6 +74,7 @@ export type Solution = {
   requiredTools: string[];
   helpsWith: string[];
   sources: string[];
+  video?: VideoEmbed;
 };
 
 export type ToolEntry = {

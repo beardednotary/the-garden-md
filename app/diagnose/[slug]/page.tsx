@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { ContentImageGallery } from "@/components/ContentImage";
 import { FieldNote } from "@/components/FieldNote";
 import { QuickTable } from "@/components/QuickTable";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SidebarPanel } from "@/components/SidebarPanel";
+import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { getCause, getSource, getSymptom, isDefined, siteUrl, symptoms, tools } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -74,6 +76,12 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
             ))}
           </p>
 
+          {symptom.images && symptom.images.length > 0 && (
+            <div className="mt-6">
+              <ContentImageGallery images={symptom.images} />
+            </div>
+          )}
+
           <section className="mt-10">
             <SectionHeading eyebrow="Quick Diagnosis" title="Start with the visible pattern" />
             <QuickTable rows={symptom.patterns} />
@@ -81,6 +89,11 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
 
           <section className="mt-10">
             <FieldNote title="Field Check" body={symptom.fieldCheck} />
+            {symptom.video && (
+              <div className="mt-4">
+                <YouTubeEmbed video={symptom.video} />
+              </div>
+            )}
           </section>
 
           <section className="mt-10">

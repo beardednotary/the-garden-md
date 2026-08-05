@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { ContentImage } from "@/components/ContentImage";
 import { SidebarPanel } from "@/components/SidebarPanel";
 import { SectionHeading } from "@/components/SectionHeading";
 import { causes, getCause, getSolution, getSource, getTool, isDefined } from "@/lib/content";
@@ -33,6 +34,11 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
       <div className="mt-5 grid gap-10 lg:grid-cols-[minmax(0,760px)_320px]">
         <article>
           <SectionHeading eyebrow={cause.category} title={cause.name} description={cause.description} />
+          {cause.image && (
+            <div className="mb-8">
+              <ContentImage image={cause.image} />
+            </div>
+          )}
           <section className="border border-border bg-paper-light p-5 shadow-panel">
             <h2 className="font-serif text-2xl text-green-dark">How to confirm it</h2>
             <ul className="mt-4 space-y-3">

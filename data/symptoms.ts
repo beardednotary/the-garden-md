@@ -49,7 +49,21 @@ export const symptoms: Symptom[] = [
         checkFirst: "Inspect leaf surfaces for powder"
       }
     ],
-    sources: ["src-pennstate-watering", "src-umn-nutrients", "src-ucipm-powdery-mildew"]
+    sources: ["src-pennstate-watering", "src-umn-nutrients", "src-ucipm-powdery-mildew"],
+    images: [
+      {
+        src: "/images/diagnose/yellow-leaves-1.jpg",
+        alt: "Uniformly yellowish older citrus leaves next to greener new foliage, a sign of nitrogen deficiency",
+        credit: "Photo: David Rosen, UC IPM",
+        creditUrl: "https://ipm.ucanr.edu/home-and-landscape/common-nutrient-deficiency-symptoms/"
+      },
+      {
+        src: "/images/diagnose/yellow-leaves-2.jpg",
+        alt: "Maple leaves with yellow tissue between still-green veins, a sign of iron or manganese deficiency",
+        credit: "Photo: HortScience, Inc., Pleasanton, CA",
+        creditUrl: "https://ipm.ucanr.edu/home-and-landscape/common-nutrient-deficiency-symptoms/"
+      }
+    ]
   },
   {
     slug: "wilting",
@@ -88,7 +102,15 @@ export const symptoms: Symptom[] = [
         checkFirst: "Confirm how long the soil stays wet"
       }
     ],
-    sources: ["src-pennstate-watering"]
+    sources: ["src-pennstate-watering"],
+    images: [
+      {
+        src: "/images/diagnose/wilting.jpg",
+        alt: "Soybean leaves wilting and developing brown, necrotic patches",
+        credit: "Photo: Adriana Murillo-Williams, Penn State",
+        creditUrl: "https://extension.psu.edu/your-plants-look-sick-now-what"
+      }
+    ]
   },
   {
     slug: "holes-in-leaves",
@@ -118,7 +140,15 @@ export const symptoms: Symptom[] = [
         checkFirst: "Inspect undersides and nearby stems"
       }
     ],
-    sources: ["src-ucipm-powdery-mildew"]
+    sources: ["src-ucipm-powdery-mildew"],
+    images: [
+      {
+        src: "/images/diagnose/holes-in-leaves.jpg",
+        alt: "Cherry leaf with irregular holes chewed by a forktailed bush katydid",
+        credit: "Photo: Jack Kelly Clark, UC IPM",
+        creditUrl: "https://ipm.ucanr.edu/agriculture/pear/katydids/"
+      }
+    ]
   },
   {
     slug: "soil-staying-wet",
@@ -186,7 +216,15 @@ export const symptoms: Symptom[] = [
         checkFirst: "Check airflow and plant spacing"
       }
     ],
-    sources: ["src-ucipm-powdery-mildew"]
+    sources: ["src-ucipm-powdery-mildew"],
+    images: [
+      {
+        src: "/images/diagnose/white-powder-on-leaves.jpg",
+        alt: "Phlox leaves covered in white powdery mildew patches",
+        credit: "Photo: Bruce Watt, University of Maine, Bugwood.org (CC BY-NC)",
+        creditUrl: "https://extension.psu.edu/diagnosing-poor-plant-health"
+      }
+    ]
   },
   {
     slug: "curling-leaves",
