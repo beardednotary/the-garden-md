@@ -29,7 +29,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
 
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Cause" }, { label: cause.name }]} />
+      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/causes", label: "Causes" }, { label: cause.name }]} />
       <div className="mt-5 grid gap-10 lg:grid-cols-[minmax(0,760px)_320px]">
         <article>
           <SectionHeading eyebrow={cause.category} title={cause.name} description={cause.description} />

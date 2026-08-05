@@ -21,7 +21,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
 
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { label: "Solution" }, { label: solution.name }]} />
+      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/solutions", label: "Solutions" }, { label: solution.name }]} />
       <div className="mt-5 grid gap-10 lg:grid-cols-[minmax(0,760px)_320px]">
         <article>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-dark">Solution Guide</p>
