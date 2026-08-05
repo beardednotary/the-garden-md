@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const footerGroups = [
@@ -35,7 +36,8 @@ export function Footer() {
     <footer className="mt-20 border-t border-border bg-paper-light">
       <div className="mx-auto grid max-w-shell gap-10 px-4 py-10 md:grid-cols-4 md:px-6">
         <div>
-          <div className="font-serif text-2xl text-green-dark">GardenMD</div>
+          <Image src="/badge.png" alt="" width={48} height={48} className="h-12 w-12" />
+          <div className="mt-3 font-serif text-2xl text-green-dark">GardenMD</div>
           <p className="mt-3 max-w-xs text-sm leading-6 text-muted">
             Practical answers, field checks, calculators, and equipment notes for common garden problems.
           </p>

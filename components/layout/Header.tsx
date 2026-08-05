@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SearchBox } from "@/components/SearchBox";
 
@@ -16,12 +17,15 @@ export function Header() {
   return (
     <header className="border-b border-border bg-paper-light">
       <div className="mx-auto flex max-w-shell flex-col gap-4 px-4 py-5 md:flex-row md:items-end md:justify-between md:px-6">
-        <Link href="/" className="block text-ink no-underline">
-          <div className="font-serif text-3xl uppercase tracking-[0.14em] text-green-dark">
-            GardenMD
-          </div>
-          <div className="mt-1 text-sm text-muted">
-            Practical answers for common garden problems
+        <Link href="/" className="flex items-center gap-3 text-ink no-underline">
+          <Image src="/badge.png" alt="" width={56} height={56} className="h-14 w-14" priority />
+          <div>
+            <div className="font-serif text-3xl uppercase tracking-[0.14em] text-green-dark">
+              GardenMD
+            </div>
+            <div className="mt-1 text-sm text-muted">
+              Practical answers for common garden problems
+            </div>
           </div>
         </Link>
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:gap-5">

@@ -16,6 +16,22 @@ export const metadata: Metadata = {
     "Practical answers for common garden problems, with diagnosis pages, calculators, systems guides, and restrained tool recommendations.",
   alternates: {
     canonical: "/"
+  },
+  openGraph: {
+    title: "GardenMD",
+    description:
+      "Practical answers for common garden problems, with diagnosis pages, calculators, systems guides, and restrained tool recommendations.",
+    url: "/",
+    siteName: "GardenMD",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "GardenMD" }],
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GardenMD",
+    description:
+      "Practical answers for common garden problems, with diagnosis pages, calculators, systems guides, and restrained tool recommendations.",
+    images: ["/og-image.png"]
   }
 };
 
