@@ -119,5 +119,73 @@ export const causes: Cause[] = [
     fixes: ["improve-pollination-and-fruit-set"],
     tools: ["soil-moisture-meters"],
     sources: ["src-pennstate-watering"]
+  },
+  {
+    slug: "calcium-uptake-disruption",
+    name: "Calcium uptake disruption",
+    category: "Water",
+    description:
+      "Blossom end rot is usually caused by inconsistent watering interrupting how calcium moves into developing fruit, not a true shortage of calcium in the soil.",
+    symptoms: ["blossom-end-rot"],
+    typicalPlants: ["tomatoes", "peppers"],
+    confirmationSteps: [
+      "Check whether watering has swung between very dry and very wet recently.",
+      "Confirm the dark, sunken spot is on the blossom end of the fruit rather than damage from an insect or the stem end.",
+      "Rule out an actual soil calcium deficiency with a soil test before adding calcium products."
+    ],
+    fixes: ["water-consistently-during-fruiting"],
+    tools: ["soil-moisture-meters", "drip-irrigation-kits"],
+    sources: ["src-pennstate-watering", "src-umn-nutrients"]
+  },
+  {
+    slug: "leaf-scorch",
+    name: "Leaf scorch",
+    category: "Environment",
+    description:
+      "Leaf scorch is tissue damage at the tips and edges of leaves from heat, wind, drought, or a buildup of fertilizer salts, and it does not reverse once it appears.",
+    symptoms: ["brown-leaf-tips-and-edges"],
+    typicalPlants: ["hydrangeas", "tomatoes", "peppers"],
+    confirmationSteps: [
+      "Check whether browning is limited to tips and margins rather than spreading in blotches across the leaf.",
+      "Review recent heat, wind exposure, or missed waterings.",
+      "Review recent fertilizing, since over-fertilizing can scorch leaves the same way drought does."
+    ],
+    fixes: ["reduce-leaf-scorch"],
+    tools: ["soil-moisture-meters", "raised-bed-tools"],
+    sources: ["src-pennstate-watering"]
+  },
+  {
+    slug: "black-spot",
+    name: "Black spot",
+    category: "Disease",
+    description:
+      "Black spot is a fungal disease, most familiar on roses, that causes dark spots with fringed edges surrounded by yellowing, and it spreads fastest when foliage stays wet.",
+    symptoms: ["black-spot-on-leaves"],
+    typicalPlants: ["roses"],
+    confirmationSteps: [
+      "Look for dark, roughly circular spots with feathered edges, often ringed by yellow tissue.",
+      "Check whether affected leaves are dropping earlier than unaffected ones.",
+      "Note whether watering wets the foliage or splashes soil onto lower leaves."
+    ],
+    fixes: ["remove-and-treat-black-spot", "improve-airflow", "spray-neem-oil"],
+    tools: ["bypass-pruners", "copper-fungicide", "neem-oil"],
+    sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
+    slug: "insufficient-light",
+    name: "Insufficient light",
+    category: "Environment",
+    description:
+      "Without enough light, plants stretch toward the nearest light source, producing thin, pale, widely spaced growth instead of compact, sturdy stems.",
+    symptoms: ["leggy-stretched-growth"],
+    typicalPlants: ["tomatoes", "peppers"],
+    confirmationSteps: [
+      "Check how many hours of direct light the plant actually receives where it currently sits.",
+      "Compare stem spacing and color to a healthy plant of the same age and species.",
+      "Note whether the problem started after a change in location, season, or nearby shade."
+    ],
+    fixes: ["add-supplemental-light"],
+    tools: ["grow-lights"],
+    sources: ["src-umd-seedlings"]
   }
 ];

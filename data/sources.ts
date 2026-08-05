@@ -21,5 +21,12 @@ export const sources: Source[] = [
     topic: "Nitrogen and iron deficiency symptoms",
     publicationDate: "2024",
     url: "https://extension.umn.edu/"
+  },
+  {
+    id: "src-umd-seedlings",
+    organization: "University of Maryland Extension",
+    topic: "Starting seeds and seedling light requirements",
+    publicationDate: "2025",
+    url: "https://extension.umd.edu/"
   }
 ];

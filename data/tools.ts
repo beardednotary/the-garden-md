@@ -124,5 +124,34 @@ export const tools: ToolEntry[] = [
     featuredProduct: "Rain Bird GARDENKIT Raised Bed Drip Irrigation Kit",
     affiliateUrl:
       "https://www.amazon.com/dp/B0BCH7PYCD?ref=t_ac_spc_accepted_tile&linkCode=tr1&tag=beardednotary-20&linkId=B0BCH7PYCD_1785909093060"
+  },
+  {
+    slug: "copper-fungicide",
+    name: "Copper fungicide",
+    category: "Pest & Disease",
+    typicalPrice: "$12 to $22",
+    useCases: ["Treating black spot on roses", "Broad-spectrum fungal disease control", "Organic-approved fungicide use"],
+    worksFor: ["black-spot", "powdery-mildew"],
+    avoidIf: ["You have not confirmed the problem is fungal rather than a pest or nutrient issue"],
+    features: ["Concentrate you dilute yourself", "OMRI-listed for organic gardening", "Labeled for roses, vegetables, and fruit trees"],
+    description:
+      "Copper fungicide is a standard, more effective treatment than neem oil for black spot specifically, but sanitation and airflow still matter more than any spray.",
+    featuredProduct: "Bonide Captain Jack Copper Fungicide, 16 oz Concentrate",
+    affiliateUrl: amazonProductUrl("B0CVQR4FND")
+  },
+  {
+    slug: "grow-lights",
+    name: "Grow lights",
+    category: "Propagation",
+    typicalPrice: "$25 to $45",
+    useCases: ["Starting seedlings indoors", "Overwintering leggy houseplants", "Supplementing a dim windowsill"],
+    worksFor: ["leggy-stretched-growth"],
+    avoidIf: ["Your plants already get several hours of direct sun where they sit"],
+    features: ["Full-spectrum output", "Linkable fixtures for multiple trays", "Individual on/off switches"],
+    description:
+      "A basic full-spectrum light fixed a few inches above seedlings does more to prevent legginess than any amount of fertilizer.",
+    featuredProduct: "Barrina T5 Grow Lights, 2ft 40W Full Spectrum, 4-Pack",
+    affiliateUrl:
+      "https://www.amazon.com/dp/B0814LNBHH?ref=t_ac_spc_accepted_tile&linkCode=tr1&tag=beardednotary-20&linkId=B0814LNBHH_1785913345685"
   }
 ];

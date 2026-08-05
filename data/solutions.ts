@@ -83,7 +83,7 @@ export const solutions: Solution[] = [
       "Adjust spacing or support systems for better long-term airflow."
     ],
     requiredTools: ["bypass-pruners"],
-    helpsWith: ["white-powder-on-leaves", "curling-leaves"],
+    helpsWith: ["white-powder-on-leaves", "curling-leaves", "black-spot-on-leaves"],
     sources: ["src-ucipm-powdery-mildew"]
   },
   {
@@ -100,7 +100,7 @@ export const solutions: Solution[] = [
       "Reapply on the label's schedule and avoid spraying in full sun or near bloom time when pollinators are active."
     ],
     requiredTools: ["neem-oil"],
-    helpsWith: ["white-powder-on-leaves", "holes-in-leaves", "curling-leaves"],
+    helpsWith: ["white-powder-on-leaves", "holes-in-leaves", "curling-leaves", "black-spot-on-leaves"],
     sources: ["src-ucipm-powdery-mildew"]
   },
   {
@@ -170,5 +170,73 @@ export const solutions: Solution[] = [
     requiredTools: ["soil-moisture-meters"],
     helpsWith: ["plants-not-producing-fruit"],
     sources: ["src-pennstate-watering"]
+  },
+  {
+    slug: "water-consistently-during-fruiting",
+    name: "Water consistently during fruiting",
+    difficulty: "Easy",
+    time: "Ongoing during fruit development",
+    cost: "$",
+    summary:
+      "Blossom end rot usually responds to steadier watering rather than added calcium, since the underlying problem is delivery, not supply.",
+    steps: [
+      "Water on a regular schedule instead of letting the soil swing between bone dry and soaked.",
+      "Mulch to buffer soil moisture, especially in containers and raised beds.",
+      "Hold off on calcium sprays until a soil test confirms an actual deficiency rather than a watering problem."
+    ],
+    requiredTools: ["soil-moisture-meters", "drip-irrigation-kits"],
+    helpsWith: ["blossom-end-rot"],
+    sources: ["src-pennstate-watering"]
+  },
+  {
+    slug: "reduce-leaf-scorch",
+    name: "Reduce leaf scorch",
+    difficulty: "Easy",
+    time: "20 minutes to assess, ongoing to prevent",
+    cost: "$",
+    summary:
+      "Scorched tissue will not turn green again, so the goal is preventing more of it rather than reversing existing damage.",
+    steps: [
+      "Water deeply during heat or wind events instead of skipping a scheduled watering.",
+      "Mulch to reduce soil temperature swings and moisture loss.",
+      "Cut back on fertilizer for a season if recent heavy feeding lines up with when scorch appeared."
+    ],
+    requiredTools: ["soil-moisture-meters", "raised-bed-tools"],
+    helpsWith: ["brown-leaf-tips-and-edges"],
+    sources: ["src-pennstate-watering"]
+  },
+  {
+    slug: "remove-and-treat-black-spot",
+    name: "Remove and treat black spot",
+    difficulty: "Moderate",
+    time: "30 to 45 minutes, plus a seasonal spray schedule",
+    cost: "$$",
+    summary:
+      "Sanitation matters as much as any spray, since black spot spores overwinter in fallen leaves and reinfect the plant the following season.",
+    steps: [
+      "Remove and dispose of infected leaves, including any that have already dropped, rather than composting them.",
+      "Apply a copper fungicide on a label-appropriate schedule once sanitation and airflow are addressed.",
+      "Water at the base of the plant instead of overhead to keep foliage drier."
+    ],
+    requiredTools: ["bypass-pruners", "copper-fungicide"],
+    helpsWith: ["black-spot-on-leaves"],
+    sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
+    slug: "add-supplemental-light",
+    name: "Add supplemental light",
+    difficulty: "Easy",
+    time: "15 minutes to set up",
+    cost: "$$",
+    summary:
+      "A basic grow light positioned close to the plant fixes legginess more reliably than moving a tray to a slightly brighter windowsill.",
+    steps: [
+      "Position a full-spectrum light a few inches above the seedlings or affected plant.",
+      "Run the light for 12 to 16 hours a day rather than leaving it on constantly.",
+      "Raise the light as plants grow to keep the distance consistent."
+    ],
+    requiredTools: ["grow-lights"],
+    helpsWith: ["leggy-stretched-growth"],
+    sources: ["src-umd-seedlings"]
   }
 ];

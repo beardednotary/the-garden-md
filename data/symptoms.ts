@@ -273,5 +273,145 @@ export const symptoms: Symptom[] = [
       }
     ],
     sources: ["src-pennstate-watering", "src-umn-nutrients"]
+  },
+  {
+    slug: "blossom-end-rot",
+    name: "Blossom end rot",
+    questionTitle: "Why does my fruit have a dark, sunken spot on the bottom?",
+    description:
+      "Blossom end rot is a dark, leathery, sunken spot at the blossom end of tomatoes and peppers. It is almost always about watering consistency, not a calcium product you need to buy.",
+    quickAnswer:
+      "Check your recent watering pattern before assuming the soil is short on calcium.",
+    aliases: ["Rot on bottom of tomato", "Dark spot on fruit", "Sunken spot on tomato"],
+    bodyArea: "Fruit",
+    urgency: "Low to medium",
+    commonCauses: [{ slug: "calcium-uptake-disruption", confidence: 80 }],
+    relatedSymptoms: ["wilting"],
+    recommendedTools: ["soil-moisture-meters", "drip-irrigation-kits"],
+    fieldCheck:
+      "Look at the fruit itself, not the soil. A dark, sunken, leathery patch specifically at the blossom end (opposite the stem) is the identifying sign.",
+    firstSteps: [
+      "Review whether watering has swung between very dry and very wet recently.",
+      "Water more consistently before adding any calcium product.",
+      "Remove affected fruit so the plant can direct energy elsewhere."
+    ],
+    patterns: [
+      {
+        observation: "Dark, sunken spot at the blossom end only",
+        likelyCause: "Calcium uptake disruption from inconsistent watering",
+        checkFirst: "Review recent watering pattern"
+      },
+      {
+        observation: "Damage on multiple sides of the fruit or on the stem end",
+        likelyCause: "Physical damage or a pest, not blossom end rot",
+        checkFirst: "Inspect the fruit for entry holes or insects"
+      }
+    ],
+    sources: ["src-pennstate-watering", "src-umn-nutrients"]
+  },
+  {
+    slug: "brown-leaf-tips-and-edges",
+    name: "Brown leaf tips and edges",
+    questionTitle: "Why are the tips and edges of my plant's leaves turning brown?",
+    description:
+      "Browning that starts at the tips and margins usually points to leaf scorch from heat, wind, drought, or fertilizer salt buildup rather than disease.",
+    quickAnswer:
+      "Check recent watering and fertilizing before treating this as a disease.",
+    aliases: ["Brown leaf edges", "Crispy leaf tips", "Leaf margin burn"],
+    bodyArea: "Leaf",
+    urgency: "Low",
+    commonCauses: [{ slug: "leaf-scorch", confidence: 70 }],
+    relatedSymptoms: ["wilting", "yellow-leaves"],
+    recommendedTools: ["soil-moisture-meters", "raised-bed-tools"],
+    fieldCheck:
+      "Check whether the browning is confined to tips and margins, with otherwise normal leaf color and shape. Scorch does not typically cause spots or a powdery coating.",
+    firstSteps: [
+      "Review recent heat, wind, or missed watering.",
+      "Review recent fertilizing history for a possible salt buildup.",
+      "Water deeply and mulch before assuming a disease is involved."
+    ],
+    patterns: [
+      {
+        observation: "Browning limited to tips and margins",
+        likelyCause: "Leaf scorch from heat, wind, or drought",
+        checkFirst: "Check recent watering and weather"
+      },
+      {
+        observation: "Browning after a recent heavy feeding",
+        likelyCause: "Fertilizer salt burn",
+        checkFirst: "Review recent fertilizing history"
+      }
+    ],
+    sources: ["src-pennstate-watering"]
+  },
+  {
+    slug: "black-spot-on-leaves",
+    name: "Black spot on leaves",
+    questionTitle: "Why does my rose have black spots on its leaves?",
+    description:
+      "Circular black or purple spots with feathered edges, often ringed by yellowing, point to black spot, a fungal disease especially common on roses in humid conditions.",
+    quickAnswer:
+      "Confirm the fringed, dark spots and check whether affected leaves are dropping before treating for a pest.",
+    aliases: ["Black spots on rose leaves", "Purple spots on leaves"],
+    bodyArea: "Leaf",
+    urgency: "Medium",
+    commonCauses: [{ slug: "black-spot", confidence: 88 }],
+    relatedSymptoms: ["yellow-leaves", "white-powder-on-leaves"],
+    recommendedTools: ["bypass-pruners", "copper-fungicide"],
+    fieldCheck:
+      "Look closely at the spot edges. Black spot has a feathered, irregular border, unlike the more uniform coating of powdery mildew.",
+    firstSteps: [
+      "Remove and dispose of affected leaves, including fallen ones, rather than composting them.",
+      "Improve airflow and avoid wetting foliage when watering.",
+      "Apply a copper fungicide if sanitation and airflow changes are not enough on their own."
+    ],
+    patterns: [
+      {
+        observation: "Dark spots with feathered edges and yellowing around them",
+        likelyCause: "Black spot fungal disease",
+        checkFirst: "Inspect spot edges and check for early leaf drop"
+      },
+      {
+        observation: "Uniform white or gray dusty coating instead of spots",
+        likelyCause: "Powdery mildew rather than black spot",
+        checkFirst: "Compare the coating to a defined dark spot"
+      }
+    ],
+    sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
+    slug: "leggy-stretched-growth",
+    name: "Leggy, stretched growth",
+    questionTitle: "Why is my plant tall, thin, and stretched out?",
+    description:
+      "Thin, pale, widely spaced stems reaching toward a light source usually mean the plant is not getting enough light, most often seedlings started indoors.",
+    quickAnswer:
+      "Check how much direct light the plant actually gets where it currently sits before changing anything else.",
+    aliases: ["Leggy seedlings", "Stretched seedlings", "Etiolation"],
+    bodyArea: "Whole plant",
+    urgency: "Low",
+    commonCauses: [{ slug: "insufficient-light", confidence: 75 }],
+    relatedSymptoms: ["yellow-leaves"],
+    recommendedTools: ["grow-lights"],
+    fieldCheck:
+      "Compare stem spacing and color to a healthy plant of the same age. Wide gaps between leaves and pale, thin stems point to insufficient light rather than a nutrient issue.",
+    firstSteps: [
+      "Check how many hours of direct light the plant gets in its current spot.",
+      "Move the plant closer to a light source or add a supplemental grow light.",
+      "Avoid adding fertilizer as a first response, since more light is usually the actual fix."
+    ],
+    patterns: [
+      {
+        observation: "Pale, thin stems with wide gaps between leaves",
+        likelyCause: "Insufficient light",
+        checkFirst: "Check daily hours of direct light"
+      },
+      {
+        observation: "Stretching toward one direction consistently",
+        likelyCause: "A single, uneven light source",
+        checkFirst: "Check for a nearby window or light fixture on one side"
+      }
+    ],
+    sources: ["src-umd-seedlings"]
   }
 ];
