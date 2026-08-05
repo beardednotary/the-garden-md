@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SearchBox } from "@/components/SearchBox";
 
 const navItems = [
   { href: "/diagnose", label: "Diagnose" },
@@ -23,14 +24,16 @@ export function Header() {
             Practical answers for common garden problems
           </div>
         </Link>
-        <nav aria-label="Primary navigation" className="flex flex-wrap gap-x-5 gap-y-2 text-[15px]">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="text-green-dark underline-offset-4 hover:underline">
-              {item.label}
-            </Link>
-          ))}
-          <span className="text-muted">Search</span>
-        </nav>
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:gap-5">
+          <nav aria-label="Primary navigation" className="flex flex-wrap gap-x-5 gap-y-2 text-[15px]">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href} className="text-green-dark underline-offset-4 hover:underline">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <SearchBox variant="compact" placeholder="Search" />
+        </div>
       </div>
     </header>
   );

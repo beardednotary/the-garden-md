@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CardGrid } from "@/components/CardGrid";
+import { SearchBox } from "@/components/SearchBox";
 import { SectionHeading } from "@/components/SectionHeading";
 import { calculators, symptoms, systems, tools } from "@/lib/content";
 
@@ -14,17 +15,9 @@ export default function HomePage() {
         <p className="mt-4 max-w-2xl text-lg text-muted">
           Search symptoms, compare likely causes, check the simplest fix first, and use calculators before you buy materials.
         </p>
-        <form className="mt-6 max-w-2xl">
-          <label htmlFor="search" className="mb-2 block text-sm font-semibold text-green-dark">
-            Search GardenMD
-          </label>
-          <input
-            id="search"
-            type="search"
-            placeholder="Yellow leaves, wet soil, raised bed soil calculator"
-            className="w-full border border-border bg-paper px-4 py-3 text-ink outline-none placeholder:text-muted"
-          />
-        </form>
+        <div className="mt-6 max-w-2xl">
+          <SearchBox variant="hero" />
+        </div>
         <p className="mt-4 text-sm text-muted">
           Common problems:{" "}
           {["Yellow leaves", "Wilting", "Holes in leaves", "Wet soil", "White powder"].map((item, index) => (
