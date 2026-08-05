@@ -69,6 +69,7 @@ export type ToolEntry = {
   avoidIf: string[];
   features: string[];
   description: string;
+  featuredProduct: string;
   affiliateUrl: string;
 };
 

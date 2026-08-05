@@ -2,6 +2,23 @@ import type { Cause } from "@/lib/types";
 
 export const causes: Cause[] = [
   {
+    slug: "underwatering",
+    name: "Underwatering",
+    category: "Water",
+    description:
+      "Underwatering leaves roots without enough moisture to keep foliage turgid, and it is often worse in containers, sandy soil, or hot, windy weather.",
+    symptoms: ["wilting", "curling-leaves"],
+    typicalPlants: ["tomatoes", "peppers", "hydrangeas"],
+    confirmationSteps: [
+      "Check soil moisture several inches down, not just at the surface.",
+      "Note whether the plant recovers within a few hours of a deep watering.",
+      "Look for wilting that is worse in containers, sandy soil, or exposed, windy spots."
+    ],
+    fixes: ["correct-underwatering", "install-drip-irrigation", "mulch-a-garden-bed"],
+    tools: ["soil-moisture-meters", "hose-timers", "drip-irrigation-kits"],
+    sources: ["src-pennstate-watering"]
+  },
+  {
     slug: "overwatering",
     name: "Overwatering",
     category: "Water",
@@ -49,7 +66,7 @@ export const causes: Cause[] = [
       "Review recent fertilizing history before making changes."
     ],
     fixes: ["test-garden-soil", "mulch-a-garden-bed"],
-    tools: ["raised-bed-tools"],
+    tools: ["raised-bed-tools", "soil-test-kits"],
     sources: ["src-umn-nutrients"]
   },
   {
@@ -65,8 +82,8 @@ export const causes: Cause[] = [
       "Check whether crowded growth is limiting airflow.",
       "Remove a leaf and compare symptoms across several plants."
     ],
-    fixes: ["improve-airflow", "protect-plants-with-netting"],
-    tools: ["bypass-pruners", "garden-netting"],
+    fixes: ["improve-airflow", "protect-plants-with-netting", "spray-neem-oil"],
+    tools: ["bypass-pruners", "garden-netting", "neem-oil"],
     sources: ["src-ucipm-powdery-mildew"]
   },
   {
@@ -82,8 +99,25 @@ export const causes: Cause[] = [
       "Look for sticky honeydew or ants moving across the plant.",
       "Check whether distorted growth is concentrated on soft new tissue."
     ],
-    fixes: ["improve-airflow"],
-    tools: ["bypass-pruners", "garden-netting"],
+    fixes: ["improve-airflow", "spray-neem-oil"],
+    tools: ["bypass-pruners", "garden-netting", "neem-oil"],
     sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
+    slug: "blossom-drop",
+    name: "Blossom drop",
+    category: "Environment",
+    description:
+      "Flowers open and then drop before setting fruit, usually from temperature extremes, inconsistent watering during bloom, or weak pollination rather than a nutrient problem.",
+    symptoms: ["plants-not-producing-fruit"],
+    typicalPlants: ["tomatoes", "peppers"],
+    confirmationSteps: [
+      "Check daytime and nighttime temperatures during the bloom period against the plant's normal range.",
+      "Watch a few flowers over several days to see whether they drop without any fruit swelling behind them.",
+      "Review recent watering consistency, since drought stress during bloom can make drop worse."
+    ],
+    fixes: ["improve-pollination-and-fruit-set"],
+    tools: ["soil-moisture-meters"],
+    sources: ["src-pennstate-watering"]
   }
 ];

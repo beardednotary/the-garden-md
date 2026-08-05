@@ -43,7 +43,7 @@ export const calculators: Calculator[] = [
     description:
       "A planning guide for line length, timer placement, and emitter spacing in a basic bed setup.",
     inputs: ["Bed length", "Bed count", "Row count"],
-    relatedTools: ["hose-timers"],
+    relatedTools: ["hose-timers", "drip-irrigation-kits"],
     formulaLabel: "bed length x rows with allowance for bends and connections"
   }
 ];

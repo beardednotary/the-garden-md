@@ -29,9 +29,13 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
             <FieldNote title="Typical Price" body={tool.typicalPrice} />
             <FieldNote title="Best Use" body={tool.useCases[0]} />
           </section>
-          <section className="mt-6">
-            <AffiliateButton href={tool.affiliateUrl} />
-            <p className="mt-2 text-xs text-muted">
+          <section className="mt-6 border border-border bg-paper-light p-5 shadow-panel">
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-green-dark">Our Pick</div>
+            <p className="mt-2 text-lg">{tool.featuredProduct}</p>
+            <div className="mt-4">
+              <AffiliateButton href={tool.affiliateUrl} />
+            </div>
+            <p className="mt-3 text-xs text-muted">
               As an Amazon Associate we earn from qualifying purchases. See our{" "}
               <Link href="/affiliate-disclosure" className="underline-offset-4 hover:underline">
                 affiliate disclosure

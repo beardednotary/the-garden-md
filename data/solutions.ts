@@ -2,6 +2,23 @@ import type { Solution } from "@/lib/types";
 
 export const solutions: Solution[] = [
   {
+    slug: "correct-underwatering",
+    name: "Correct underwatering",
+    difficulty: "Easy",
+    time: "15 minutes to assess, a few days to confirm",
+    cost: "$",
+    summary:
+      "Most underwatering fixes are about watering more deeply and more consistently, not just more often.",
+    steps: [
+      "Water deeply enough to reach the full root zone rather than wetting only the surface.",
+      "Check containers and sandy soil more often, since they dry out faster than garden beds.",
+      "Add mulch or shift to drip irrigation if the plant dries out again within a day or two."
+    ],
+    requiredTools: ["soil-moisture-meters", "hose-timers"],
+    helpsWith: ["wilting", "curling-leaves"],
+    sources: ["src-pennstate-watering"]
+  },
+  {
     slug: "correct-overwatering",
     name: "Correct overwatering",
     difficulty: "Easy",
@@ -48,8 +65,8 @@ export const solutions: Solution[] = [
       "Use a pressure regulator and timer suited to the water source.",
       "Test emitter placement before covering lines with mulch."
     ],
-    requiredTools: ["hose-timers"],
-    helpsWith: ["underwatering", "overwatering", "soil-drying-too-fast"],
+    requiredTools: ["hose-timers", "drip-irrigation-kits"],
+    helpsWith: ["wilting", "soil-staying-wet"],
     sources: ["src-pennstate-watering"]
   },
   {
@@ -70,6 +87,23 @@ export const solutions: Solution[] = [
     sources: ["src-ucipm-powdery-mildew"]
   },
   {
+    slug: "spray-neem-oil",
+    name: "Spray neem oil",
+    difficulty: "Easy",
+    time: "20 minutes plus repeat applications",
+    cost: "$",
+    summary:
+      "Neem oil can help with mild powdery mildew or aphid pressure, but it works best after airflow and spacing are already fixed, not instead of fixing them.",
+    steps: [
+      "Improve airflow and remove heavily affected growth first.",
+      "Dilute and apply according to the label, covering both sides of the leaves.",
+      "Reapply on the label's schedule and avoid spraying in full sun or near bloom time when pollinators are active."
+    ],
+    requiredTools: ["neem-oil"],
+    helpsWith: ["white-powder-on-leaves", "holes-in-leaves", "curling-leaves"],
+    sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
     slug: "test-garden-soil",
     name: "Test garden soil",
     difficulty: "Easy",
@@ -82,7 +116,7 @@ export const solutions: Solution[] = [
       "Avoid sampling immediately after fertilizing.",
       "Use the results to guide future amendments instead of reacting to one symptom."
     ],
-    requiredTools: ["raised-bed-tools"],
+    requiredTools: ["raised-bed-tools", "soil-test-kits"],
     helpsWith: ["yellow-leaves", "plants-not-producing-fruit"],
     sources: ["src-umn-nutrients"]
   },
@@ -100,7 +134,7 @@ export const solutions: Solution[] = [
       "Refresh only as needed rather than piling it up continuously."
     ],
     requiredTools: ["raised-bed-tools"],
-    helpsWith: ["soil-drying-too-fast", "wilting"],
+    helpsWith: ["wilting"],
     sources: ["src-pennstate-watering"]
   },
   {
@@ -118,6 +152,23 @@ export const solutions: Solution[] = [
     ],
     requiredTools: ["garden-netting"],
     helpsWith: ["holes-in-leaves"],
+    sources: ["src-pennstate-watering"]
+  },
+  {
+    slug: "improve-pollination-and-fruit-set",
+    name: "Improve pollination and fruit set",
+    difficulty: "Easy",
+    time: "Ongoing during bloom",
+    cost: "$",
+    summary:
+      "Small changes during bloom can reduce blossom drop and improve how many flowers actually turn into fruit.",
+    steps: [
+      "Keep watering consistent during flowering instead of letting the plant dry out between waterings.",
+      "Avoid high-nitrogen fertilizer once flowering starts, since it favors leafy growth over fruit set.",
+      "Hand-pollinate or gently shake flowering stems in the morning if pollinator activity is low."
+    ],
+    requiredTools: ["soil-moisture-meters"],
+    helpsWith: ["plants-not-producing-fruit"],
     sources: ["src-pennstate-watering"]
   }
 ];

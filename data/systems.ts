@@ -17,7 +17,7 @@ export const systems: SystemEntry[] = [
       "A simple one-bed drip setup that keeps the first project manageable.",
     idealFor: ["New raised bed gardeners", "Hot summer watering", "Vacation coverage"],
     watchFor: ["Wrong pressure", "Emitter gaps", "Timer drift"],
-    relatedTools: ["hose-timers", "raised-bed-tools"]
+    relatedTools: ["hose-timers", "raised-bed-tools", "drip-irrigation-kits"]
   },
   {
     slug: "vacation-watering",

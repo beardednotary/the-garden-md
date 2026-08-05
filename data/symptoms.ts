@@ -19,7 +19,7 @@ export const symptoms: Symptom[] = [
       { slug: "powdery-mildew", confidence: 34 }
     ],
     relatedSymptoms: ["wilting", "curling-leaves", "soil-staying-wet"],
-    recommendedTools: ["soil-moisture-meters", "raised-bed-tools"],
+    recommendedTools: ["soil-moisture-meters", "raised-bed-tools", "soil-test-kits"],
     fieldCheck:
       "Push a finger about two inches into the soil. If the soil remains wet several days after watering, poor drainage or excess watering may be involved.",
     firstSteps: [
@@ -63,10 +63,11 @@ export const symptoms: Symptom[] = [
     bodyArea: "Whole plant",
     urgency: "High in hot weather",
     commonCauses: [
+      { slug: "underwatering", confidence: 85 },
       { slug: "overwatering", confidence: 70 },
       { slug: "poor-drainage", confidence: 64 }
     ],
-    relatedSymptoms: ["yellow-leaves", "soil-drying-too-fast"],
+    relatedSymptoms: ["yellow-leaves", "curling-leaves"],
     recommendedTools: ["soil-moisture-meters"],
     fieldCheck:
       "Check the soil in the morning and again late in the day. Temporary afternoon wilt behaves differently from ongoing root-zone stress.",
@@ -102,7 +103,7 @@ export const symptoms: Symptom[] = [
     urgency: "Low to medium",
     commonCauses: [{ slug: "aphids", confidence: 38 }],
     relatedSymptoms: ["curling-leaves"],
-    recommendedTools: ["garden-netting"],
+    recommendedTools: ["garden-netting", "neem-oil"],
     fieldCheck:
       "Inspect leaves early in the morning and again at dusk. Some pests hide during the day.",
     firstSteps: [
@@ -170,7 +171,7 @@ export const symptoms: Symptom[] = [
     urgency: "Medium",
     commonCauses: [{ slug: "powdery-mildew", confidence: 95 }],
     relatedSymptoms: ["yellow-leaves"],
-    recommendedTools: ["bypass-pruners"],
+    recommendedTools: ["bypass-pruners", "neem-oil"],
     fieldCheck:
       "Compare shaded and crowded plants to more open ones. Mildew often shows up first where airflow is limited.",
     firstSteps: [
@@ -186,5 +187,91 @@ export const symptoms: Symptom[] = [
       }
     ],
     sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
+    slug: "curling-leaves",
+    name: "Curling leaves",
+    questionTitle: "Why are my plant leaves curling?",
+    description:
+      "Curling leaves usually point to water stress, heat, or sap-feeding pests. The direction of the curl matters less than what you find when you check the plant closely.",
+    quickAnswer:
+      "Check the undersides of new growth for pests before assuming curling is a watering or heat problem.",
+    aliases: ["Leaves rolling", "Cupped leaves", "Leaves curling up"],
+    bodyArea: "Leaf",
+    urgency: "Low to medium",
+    commonCauses: [
+      { slug: "aphids", confidence: 55 },
+      { slug: "underwatering", confidence: 48 }
+    ],
+    relatedSymptoms: ["yellow-leaves", "holes-in-leaves", "wilting"],
+    recommendedTools: ["garden-netting", "neem-oil", "soil-moisture-meters"],
+    fieldCheck:
+      "Inspect the undersides of curling leaves and the newest growth tips for clusters of small insects before treating for anything else.",
+    firstSteps: [
+      "Check soil moisture before treating for pests.",
+      "Inspect the undersides of curled leaves and stems for aphids or other insects.",
+      "Note whether curling is limited to new growth or spread across the whole plant."
+    ],
+    patterns: [
+      {
+        observation: "Curling with visible insects underneath",
+        likelyCause: "Aphids or other sap-feeding pests",
+        checkFirst: "Inspect undersides of new growth and stems"
+      },
+      {
+        observation: "Curling with dry soil and hot weather",
+        likelyCause: "Heat or water stress",
+        checkFirst: "Check root-zone moisture depth"
+      },
+      {
+        observation: "Curling with no pests and moist soil",
+        likelyCause: "Environmental stress or a viral issue that needs monitoring",
+        checkFirst: "Compare against nearby plants of the same type"
+      }
+    ],
+    sources: ["src-ucipm-powdery-mildew", "src-pennstate-watering"]
+  },
+  {
+    slug: "plants-not-producing-fruit",
+    name: "Plants not producing fruit",
+    questionTitle: "Why isn't my plant producing fruit?",
+    description:
+      "Fruit set problems usually come down to bloom-time temperature, watering consistency, or excess nitrogen rather than a disease or pest.",
+    quickAnswer:
+      "Watch whether flowers open and drop without swelling into fruit before changing your fertilizer routine.",
+    aliases: ["No fruit", "Flowers but no fruit", "Blossom drop"],
+    bodyArea: "Whole plant",
+    urgency: "Low",
+    commonCauses: [
+      { slug: "blossom-drop", confidence: 58 },
+      { slug: "nitrogen-deficiency", confidence: 22 }
+    ],
+    relatedSymptoms: ["yellow-leaves"],
+    recommendedTools: ["soil-moisture-meters"],
+    fieldCheck:
+      "Watch a few flowers over several days. If they open, dry up, and drop without any fruit swelling behind them, that points to blossom drop rather than a nutrient problem.",
+    firstSteps: [
+      "Check bloom-period temperatures before changing fertilizer.",
+      "Review recent fertilizing history for excess nitrogen.",
+      "Confirm pollinator activity, or hand-pollinate, if flowers are dropping."
+    ],
+    patterns: [
+      {
+        observation: "Flowers open and drop without swelling",
+        likelyCause: "Blossom drop from heat or inconsistent watering",
+        checkFirst: "Check bloom-period temperatures and watering"
+      },
+      {
+        observation: "Lush, dark green growth with few flowers",
+        likelyCause: "Excess nitrogen favoring leaves over fruit",
+        checkFirst: "Review recent fertilizing history"
+      },
+      {
+        observation: "Pale, stunted plant with few flowers",
+        likelyCause: "Nitrogen deficiency limiting overall vigor",
+        checkFirst: "Compare against healthy plants of the same age"
+      }
+    ],
+    sources: ["src-pennstate-watering", "src-umn-nutrients"]
   }
 ];
