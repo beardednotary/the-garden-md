@@ -62,7 +62,7 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
       <div className="mt-5 grid gap-10 lg:grid-cols-[minmax(0,760px)_320px]">
         <article>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-dark">Diagnostic Guide</p>
-          <h1 className="mt-3 font-serif text-4xl text-green-dark md:text-5xl">Why are my {symptom.name.toLowerCase()}?</h1>
+          <h1 className="mt-3 font-serif text-4xl text-green-dark md:text-5xl">{symptom.questionTitle ?? symptom.name}</h1>
           <p className="mt-4 text-lg text-muted">{symptom.quickAnswer}</p>
           <p className="mt-4 text-sm text-muted">
             Last reviewed: August 5, 2026 · Sources:{" "}
@@ -99,7 +99,7 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
           </section>
 
           <section className="mt-10">
-            <SectionHeading eyebrow="Likely Causes" title="What usually explains this symptom" />
+            <SectionHeading eyebrow="Likely Causes" title="Most likely causes to check first" />
             <div className="space-y-4">
               {likelyCauses.map(({ cause, confidence }) => (
                 <article key={cause.slug} className="border border-border bg-paper-light p-5 shadow-panel">

@@ -14,6 +14,7 @@ export type CauseLink = {
 export type Symptom = {
   slug: string;
   name: string;
+  questionTitle?: string;
   description: string;
   quickAnswer: string;
   aliases: string[];

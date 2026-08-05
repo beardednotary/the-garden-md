@@ -40,7 +40,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Common Garden Problems"
           title="Start with the symptom you can actually see"
-          description="These diagnostic pages are the main entry points into the site. Each one leads to likely causes, confirmation steps, and the least complicated next move."
+          description="If you are not sure what is wrong yet, start here. Compare the symptoms you see, check the most likely causes, and begin with the simplest fix."
         />
         <CardGrid
           items={symptoms.map((entry) => ({
@@ -57,7 +57,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Popular Calculators"
           title="Plain tools for planning soil, mulch, and irrigation"
-          description="Calculators are a major section of GardenMD, not a side feature. They should be useful enough to bookmark."
+          description="Use these to estimate soil, mulch, compost, and drip supplies before you haul bags home or order parts."
         />
         <CardGrid
           items={calculators.map((entry) => ({
@@ -74,8 +74,8 @@ export default function HomePage() {
         <div>
           <SectionHeading
             eyebrow="Watering and Irrigation"
-            title="System pages connect symptoms to setup decisions"
-            description="These are practical guides that sit between diagnosis pages and product pages."
+            title="Fix the setup, not just the symptom"
+            description="When the same problem keeps returning, these guides can help you improve watering, drainage, and overall garden setup."
           />
           <CardGrid
             items={systems.map((entry) => ({

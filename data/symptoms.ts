@@ -4,6 +4,7 @@ export const symptoms: Symptom[] = [
   {
     slug: "yellow-leaves",
     name: "Yellow leaves",
+    questionTitle: "Why are my plant leaves turning yellow?",
     description:
       "Yellow leaves are a symptom, not a diagnosis. Start by checking moisture, leaf pattern, and which leaves changed first.",
     quickAnswer:
@@ -53,6 +54,7 @@ export const symptoms: Symptom[] = [
   {
     slug: "wilting",
     name: "Wilting",
+    questionTitle: "Why are my plants wilting?",
     description:
       "Wilting can come from soil that is too dry, too wet, too hot, or from damaged roots. Soil condition matters more than the leaf posture alone.",
     quickAnswer:
@@ -90,6 +92,7 @@ export const symptoms: Symptom[] = [
   {
     slug: "holes-in-leaves",
     name: "Holes in leaves",
+    questionTitle: "What is causing holes in my plant leaves?",
     description:
       "Leaf holes usually point to physical feeding damage or abrasion, not a nutrient problem.",
     quickAnswer:
@@ -119,6 +122,7 @@ export const symptoms: Symptom[] = [
   {
     slug: "soil-staying-wet",
     name: "Soil staying wet",
+    questionTitle: "Why is my garden soil staying wet too long?",
     description:
       "Soil that stays wet too long usually points to watering frequency, container drainage, or underlying soil structure.",
     quickAnswer:
@@ -156,6 +160,7 @@ export const symptoms: Symptom[] = [
   {
     slug: "white-powder-on-leaves",
     name: "White powder on leaves",
+    questionTitle: "Why is there white powder on my plant leaves?",
     description:
       "A white or dusty coating often points to powdery mildew, especially where air movement is poor.",
     quickAnswer:

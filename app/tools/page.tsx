@@ -7,8 +7,8 @@ export default function ToolsIndexPage() {
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
       <SectionHeading
         eyebrow="Tools"
-        title="A restrained tool catalog, not a review dump"
-        description="Tool pages explain what a product is useful for, what to look for, and when not to buy it."
+        title="Tools that solve a specific garden problem"
+        description="These notes focus on what a tool is useful for, what to look for, and when you probably do not need to buy it."
       />
       <CardGrid
         items={tools.map((entry) => ({
