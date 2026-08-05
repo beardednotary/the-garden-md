@@ -101,13 +101,29 @@ export type Plant = {
   summary: string;
 };
 
+export type VolumeCalculatorConfig = {
+  kind: "volume";
+  bagSizeCubicFeet: number;
+  bagLabel: string;
+};
+
+export type ContainerCalculatorConfig = {
+  kind: "container";
+};
+
+export type DripCalculatorConfig = {
+  kind: "drip";
+};
+
+export type CalculatorConfig = VolumeCalculatorConfig | ContainerCalculatorConfig | DripCalculatorConfig;
+
 export type Calculator = {
   slug: string;
   name: string;
   description: string;
-  inputs: string[];
   relatedTools: string[];
   formulaLabel: string;
+  config: CalculatorConfig;
 };
 
 export type SystemEntry = {
