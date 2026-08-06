@@ -51,7 +51,7 @@ export function SearchBox({
   const inputClasses =
     variant === "hero"
       ? "w-full border border-border bg-paper px-4 py-3 text-ink outline-none placeholder:text-muted"
-      : "w-48 border border-border bg-paper px-3 py-1.5 text-sm text-ink outline-none placeholder:text-muted md:w-56";
+      : "w-32 border border-border bg-paper px-3 py-1.5 text-sm text-ink outline-none placeholder:text-muted md:w-40";
 
   return (
     <div ref={containerRef} className="relative">
