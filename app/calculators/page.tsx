@@ -12,7 +12,7 @@ export default function CalculatorsIndexPage() {
       <SectionHeading
         eyebrow="Calculators"
         title="Planning tools worth bookmarking"
-        description="GardenMD calculators should feel more like practical utilities than app widgets. This first build includes the main shells and one working calculator."
+        description="Five calculators for soil, mulch, compost, containers, and drip irrigation. Enter your measurements and get a straight answer before you buy anything."
       />
       <CardGrid
         items={calculators.map((entry) => ({

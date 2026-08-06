@@ -76,6 +76,29 @@ export const causes: Cause[] = [
     }
   },
   {
+    slug: "iron-deficiency",
+    name: "Iron or manganese deficiency",
+    category: "Nutrient",
+    description:
+      "Iron and manganese deficiency show up as yellowing between the leaf veins while the veins themselves stay green, usually on new growth first. High soil pH is the most common reason the plant can't take up iron or manganese that's already present in the soil.",
+    symptoms: ["yellow-leaves"],
+    typicalPlants: ["hydrangeas"],
+    confirmationSteps: [
+      "Check whether yellowing appears between the veins while the veins stay green.",
+      "Note whether it shows up on new growth first, unlike nitrogen deficiency which affects older leaves first.",
+      "Test soil pH, since alkaline soil is the most common reason these micronutrients become unavailable to roots."
+    ],
+    fixes: ["test-garden-soil"],
+    tools: ["soil-test-kits"],
+    sources: ["src-umn-nutrients"],
+    image: {
+      src: "/images/diagnose/yellow-leaves-2.jpg",
+      alt: "Maple leaves with yellow tissue between still-green veins, a sign of iron or manganese deficiency",
+      credit: "Photo: HortScience, Inc., Pleasanton, CA",
+      creditUrl: "https://ipm.ucanr.edu/home-and-landscape/common-nutrient-deficiency-symptoms/"
+    }
+  },
+  {
     slug: "powdery-mildew",
     name: "Powdery mildew",
     category: "Disease",

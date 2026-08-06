@@ -7,8 +7,8 @@ export default function PlantsIndexPage() {
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
       <SectionHeading
         eyebrow="Plants"
-        title="Plant pages stay secondary at launch"
-        description="Plants help with filtering, breadcrumbs, and future expansion, but the diagnostic pages stay primary."
+        title="Common problems by plant"
+        description="Already know what you're growing? Jump straight to the problems and watering systems most relevant to it."
       />
       <CardGrid
         items={plants.map((entry) => ({

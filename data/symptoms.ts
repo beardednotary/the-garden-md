@@ -16,6 +16,7 @@ export const symptoms: Symptom[] = [
       { slug: "overwatering", confidence: 94 },
       { slug: "nitrogen-deficiency", confidence: 62 },
       { slug: "poor-drainage", confidence: 58 },
+      { slug: "iron-deficiency", confidence: 40 },
       { slug: "powdery-mildew", confidence: 34 }
     ],
     relatedSymptoms: ["wilting", "curling-leaves", "soil-staying-wet"],
