@@ -8,7 +8,7 @@ export const causes: Cause[] = [
     description:
       "Underwatering leaves roots without enough moisture to keep foliage turgid, and it is often worse in containers, sandy soil, or hot, windy weather.",
     symptoms: ["wilting", "curling-leaves"],
-    typicalPlants: ["tomatoes", "peppers", "hydrangeas"],
+    typicalPlants: ["tomatoes", "peppers", "hydrangeas", "peace-lily"],
     confirmationSteps: [
       "Check soil moisture several inches down, not just at the surface.",
       "Note whether the plant recovers within a few hours of a deep watering.",
@@ -25,7 +25,7 @@ export const causes: Cause[] = [
     description:
       "Overwatering keeps roots deprived of oxygen and often shows up as yellow leaves, drooping, and soil that stays wet too long.",
     symptoms: ["yellow-leaves", "wilting", "soil-staying-wet"],
-    typicalPlants: ["tomatoes", "peppers", "hydrangeas"],
+    typicalPlants: ["tomatoes", "peppers", "hydrangeas", "snake-plant", "succulents-and-cacti"],
     confirmationSteps: [
       "Check whether the top two inches of soil are still damp several days after watering.",
       "Look for drooping paired with wet soil rather than dry soil.",
@@ -213,7 +213,7 @@ export const causes: Cause[] = [
     description:
       "Without enough light, plants stretch toward the nearest light source, producing thin, pale, widely spaced growth instead of compact, sturdy stems.",
     symptoms: ["leggy-stretched-growth"],
-    typicalPlants: ["tomatoes", "peppers"],
+    typicalPlants: ["tomatoes", "peppers", "pothos"],
     confirmationSteps: [
       "Check how many hours of direct light the plant actually receives where it currently sits.",
       "Compare stem spacing and color to a healthy plant of the same age and species.",
@@ -222,5 +222,107 @@ export const causes: Cause[] = [
     fixes: ["add-supplemental-light"],
     tools: ["grow-lights"],
     sources: ["src-umd-seedlings"]
+  },
+  {
+    slug: "low-humidity",
+    name: "Low humidity",
+    category: "Environment",
+    description:
+      "Tropical houseplants evolved in humid conditions, and dry indoor air, especially during heating season, causes crispy brown tips and edges that won't turn green again.",
+    symptoms: ["brown-leaf-tips-and-edges"],
+    typicalPlants: ["fiddle-leaf-fig", "peace-lily"],
+    confirmationSteps: [
+      "Check whether the browning is worse in winter or right after the heat or AC kicked on for the season.",
+      "Rule out fertilizer buildup first by checking for a white crust on the soil surface or pot rim.",
+      "Compare the plant's native humidity needs to the room it's actually in."
+    ],
+    fixes: ["increase-humidity"],
+    tools: ["humidifier"],
+    sources: ["src-clemson-houseplants"]
+  },
+  {
+    slug: "root-bound",
+    name: "Root-bound",
+    category: "Soil",
+    description:
+      "A plant left in too small a pot for too long runs out of room, and the roots circle the inside of the container instead of growing outward, which stunts growth and makes the plant hard to water evenly.",
+    symptoms: ["roots-growing-out-of-pot"],
+    typicalPlants: ["pothos", "snake-plant", "succulents-and-cacti"],
+    confirmationSteps: [
+      "Check for roots visibly circling the surface or growing out of the drainage holes.",
+      "Note whether water runs straight through the pot without the soil absorbing much of it.",
+      "Compare how long it's been since the plant was last repotted to its current size."
+    ],
+    fixes: ["repot-a-root-bound-plant"],
+    tools: [],
+    sources: ["src-clemson-houseplants"]
+  },
+  {
+    slug: "spider-mites",
+    name: "Spider mites",
+    category: "Pest",
+    description:
+      "Spider mites are tiny sap-feeding pests that thrive in warm, dry indoor air and cause fine light-colored stippling on leaves, sometimes with visible webbing in heavy infestations.",
+    symptoms: ["stippled-or-webbed-leaves"],
+    typicalPlants: ["fiddle-leaf-fig", "succulents-and-cacti"],
+    confirmationSteps: [
+      "Hold a white sheet of paper under a leaf and tap it; moving specks confirm mites rather than a nutrient issue.",
+      "Check the undersides of leaves and any fine webbing between leaves or stems.",
+      "Note whether the plant has been in an especially warm, dry spot recently."
+    ],
+    fixes: ["treat-spider-mites"],
+    tools: ["neem-oil"],
+    sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
+    slug: "fungus-gnats",
+    name: "Fungus gnats",
+    category: "Pest",
+    description:
+      "Fungus gnats are small dark flies that breed in consistently moist potting soil. The adults are mostly a nuisance, but their larvae can damage fine roots on young or weak plants.",
+    symptoms: ["small-flies-around-soil"],
+    typicalPlants: ["pothos", "peace-lily"],
+    confirmationSteps: [
+      "Check whether the flies show up mainly when the soil surface is disturbed or watered.",
+      "Confirm the top of the soil has stayed damp for several days in a row.",
+      "Look for small worm-like larvae in the top inch of soil if you dig gently."
+    ],
+    fixes: ["control-fungus-gnats"],
+    tools: ["sticky-traps"],
+    sources: ["src-clemson-houseplants"]
+  },
+  {
+    slug: "mealybugs-or-scale",
+    name: "Mealybugs or scale",
+    category: "Pest",
+    description:
+      "Mealybugs show up as cottony white masses in leaf joints, and scale looks like small waxy brown bumps stuck to stems and leaves. Both feed on sap and leave a sticky residue behind.",
+    symptoms: ["sticky-residue-or-cottony-spots"],
+    typicalPlants: ["succulents-and-cacti", "pothos"],
+    confirmationSteps: [
+      "Look closely at leaf joints and stems for cottony white clusters or small brown bumps that don't rub off easily.",
+      "Check nearby surfaces for a sticky, shiny residue the pests leave behind.",
+      "Inspect new plants closely before placing them near others, since this is a common way infestations spread."
+    ],
+    fixes: ["treat-mealybugs-and-scale"],
+    tools: ["neem-oil"],
+    sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
+    slug: "temperature-stress",
+    name: "Temperature stress or shock",
+    category: "Environment",
+    description:
+      "Cold drafts, heating vents, or a sudden change in location can cause a houseplant to drop leaves quickly, even when watering and light are otherwise fine.",
+    symptoms: ["sudden-leaf-drop"],
+    typicalPlants: ["fiddle-leaf-fig", "peace-lily"],
+    confirmationSteps: [
+      "Check whether the plant sits near a drafty window, exterior door, or heating or cooling vent.",
+      "Note whether the drop followed a recent move, temperature swing, or seasonal change.",
+      "Rule out under- or overwatering first, since both can also cause leaf drop."
+    ],
+    fixes: ["stabilize-temperature-and-location"],
+    tools: [],
+    sources: ["src-clemson-houseplants"]
   }
 ];

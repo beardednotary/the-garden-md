@@ -28,5 +28,12 @@ export const sources: Source[] = [
     topic: "Starting seeds and seedling light requirements",
     publicationDate: "2025",
     url: "https://extension.umd.edu/"
+  },
+  {
+    id: "src-clemson-houseplants",
+    organization: "Clemson Cooperative Extension",
+    topic: "Houseplant care, humidity, and common indoor pests",
+    publicationDate: "2025",
+    url: "https://hgic.clemson.edu/"
   }
 ];

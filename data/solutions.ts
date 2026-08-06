@@ -238,5 +238,107 @@ export const solutions: Solution[] = [
     requiredTools: ["grow-lights"],
     helpsWith: ["leggy-stretched-growth"],
     sources: ["src-umd-seedlings"]
+  },
+  {
+    slug: "increase-humidity",
+    name: "Increase humidity",
+    difficulty: "Easy",
+    time: "15 minutes to set up",
+    cost: "$$",
+    summary:
+      "A small humidifier near the plant does more for crispy tips than misting, since misting evaporates within minutes.",
+    steps: [
+      "Group humidity-loving plants together, since they raise the local humidity around each other.",
+      "Run a small humidifier near the plant, especially during heating season.",
+      "Avoid placing the plant directly next to a heating vent or drafty window."
+    ],
+    requiredTools: ["humidifier"],
+    helpsWith: ["brown-leaf-tips-and-edges"],
+    sources: ["src-clemson-houseplants"]
+  },
+  {
+    slug: "repot-a-root-bound-plant",
+    name: "Repot a root-bound plant",
+    difficulty: "Moderate",
+    time: "20 to 30 minutes",
+    cost: "$",
+    summary:
+      "Moving up one pot size, not several, gives the roots room to grow without leaving so much extra soil that it stays wet too long.",
+    steps: [
+      "Choose a new pot only 1 to 2 inches larger in diameter than the current one.",
+      "Gently loosen circling roots around the outside of the root ball before repotting.",
+      "Water thoroughly after repotting and keep the plant out of direct sun for a few days while it adjusts."
+    ],
+    requiredTools: [],
+    helpsWith: ["roots-growing-out-of-pot"],
+    sources: ["src-clemson-houseplants"]
+  },
+  {
+    slug: "treat-spider-mites",
+    name: "Treat spider mites",
+    difficulty: "Easy",
+    time: "20 minutes plus repeat applications",
+    cost: "$",
+    summary:
+      "Spider mites thrive in dry air, so raising humidity helps alongside any spray treatment, not instead of it.",
+    steps: [
+      "Rinse the plant well, especially the undersides of leaves, to knock down the population before spraying.",
+      "Apply neem oil or a similar treatment, covering the undersides of leaves where mites concentrate.",
+      "Reapply on the label's schedule and isolate the plant from others until the infestation clears."
+    ],
+    requiredTools: ["neem-oil"],
+    helpsWith: ["stippled-or-webbed-leaves"],
+    sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
+    slug: "control-fungus-gnats",
+    name: "Control fungus gnats",
+    difficulty: "Easy",
+    time: "10 minutes, plus a few weeks to fully clear",
+    cost: "$",
+    summary:
+      "Fungus gnats breed in wet soil, so drying out the top layer between waterings matters more than any trap.",
+    steps: [
+      "Let the top inch or two of soil dry out completely between waterings.",
+      "Set out yellow sticky traps to catch adults and track whether the population is dropping.",
+      "Avoid letting water sit in a saucer under the pot."
+    ],
+    requiredTools: ["sticky-traps"],
+    helpsWith: ["small-flies-around-soil"],
+    sources: ["src-clemson-houseplants"]
+  },
+  {
+    slug: "treat-mealybugs-and-scale",
+    name: "Treat mealybugs and scale",
+    difficulty: "Moderate",
+    time: "20 minutes plus repeat treatment",
+    cost: "$",
+    summary:
+      "Manually removing what you can see first makes any spray treatment far more effective against these pests.",
+    steps: [
+      "Wipe off visible mealybugs or scale with a cotton swab dipped in rubbing alcohol.",
+      "Apply neem oil to the whole plant, including stems and leaf joints, after manual removal.",
+      "Isolate the plant and recheck weekly, since both pests often need more than one treatment."
+    ],
+    requiredTools: ["neem-oil"],
+    helpsWith: ["sticky-residue-or-cottony-spots"],
+    sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
+    slug: "stabilize-temperature-and-location",
+    name: "Stabilize temperature and location",
+    difficulty: "Easy",
+    time: "10 minutes",
+    cost: "$",
+    summary:
+      "Most sudden leaf drop stops once the plant is moved away from the specific stress that caused it, without needing any product.",
+    steps: [
+      "Move the plant away from drafty windows, exterior doors, and heating or cooling vents.",
+      "Avoid moving the plant again immediately afterward; give it a few weeks to settle before relocating further.",
+      "Keep watering consistent while the plant recovers, since added stress can slow recovery."
+    ],
+    requiredTools: [],
+    helpsWith: ["sudden-leaf-drop"],
+    sources: ["src-clemson-houseplants"]
   }
 ];

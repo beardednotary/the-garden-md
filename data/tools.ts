@@ -153,5 +153,33 @@ export const tools: ToolEntry[] = [
     featuredProduct: "Barrina T5 Grow Lights, 2ft 40W Full Spectrum, 4-Pack",
     affiliateUrl:
       "https://www.amazon.com/dp/B0814LNBHH?ref=t_ac_spc_accepted_tile&linkCode=tr1&tag=beardednotary-20&linkId=B0814LNBHH_1785913345685"
+  },
+  {
+    slug: "sticky-traps",
+    name: "Sticky traps",
+    category: "Pest & Disease",
+    typicalPrice: "$8 to $15",
+    useCases: ["Monitoring and reducing fungus gnats", "Catching whiteflies and fruit flies", "Confirming a flying-pest problem before treating"],
+    worksFor: ["fungus-gnats"],
+    avoidIf: ["Your soil-dwelling pest problem doesn't involve flying adults"],
+    features: ["Bright yellow color specifically attracts flying pests", "No odor or spray", "Doubles as a way to monitor whether a treatment is working"],
+    description:
+      "Sticky traps catch adult fungus gnats and confirm how bad an infestation is, but they don't fix the overly wet soil that's usually the real cause.",
+    featuredProduct: "Kensizer 20-Pack Yellow Sticky Traps",
+    affiliateUrl: amazonProductUrl("B07KRRJT5J")
+  },
+  {
+    slug: "humidifier",
+    name: "Humidifier",
+    category: "Propagation",
+    typicalPrice: "$25 to $40",
+    useCases: ["Raising humidity for tropical houseplants", "Countering dry indoor heating season air", "Preventing crispy leaf tips and edges"],
+    worksFor: ["low-humidity"],
+    avoidIf: ["Your plant's soil is already staying wet too long"],
+    features: ["Cool mist output", "Sized for a single room or plant grouping", "Quiet enough to run continuously"],
+    description:
+      "A small humidifier near a cluster of tropical houseplants does more for crispy leaf tips than misting, which evaporates within minutes.",
+    featuredProduct: "LEVOIT Top Fill Cool Mist Humidifier, 1.8L",
+    affiliateUrl: amazonProductUrl("B07QWJG68W")
   }
 ];

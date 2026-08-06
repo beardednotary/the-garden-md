@@ -353,25 +353,28 @@ export const symptoms: Symptom[] = [
     name: "Brown leaf tips and edges",
     questionTitle: "Why are the tips and edges of my plant's leaves turning brown?",
     description:
-      "Browning that starts at the tips and margins usually points to leaf scorch from heat, wind, drought, or fertilizer salt buildup rather than disease.",
+      "Browning that starts at the tips and margins usually points to leaf scorch from heat, wind, drought, or fertilizer salt buildup outdoors, or low humidity on indoor tropical houseplants, rather than disease.",
     quickAnswer:
-      "Check recent watering and fertilizing before treating this as a disease.",
+      "Check recent watering, fertilizing, and indoor humidity before treating this as a disease.",
     aliases: ["Brown leaf edges", "Crispy leaf tips", "Leaf margin burn"],
     bodyArea: "Leaf",
     urgency: "Low",
-    commonCauses: [{ slug: "leaf-scorch", confidence: 70 }],
+    commonCauses: [
+      { slug: "leaf-scorch", confidence: 70 },
+      { slug: "low-humidity", confidence: 45 }
+    ],
     relatedSymptoms: ["wilting", "yellow-leaves"],
-    recommendedTools: ["soil-moisture-meters", "raised-bed-tools"],
+    recommendedTools: ["soil-moisture-meters", "raised-bed-tools", "humidifier"],
     fieldCheck:
       "Check whether the browning is confined to tips and margins, with otherwise normal leaf color and shape. Scorch does not typically cause spots or a powdery coating.",
     firstSteps: [
       "Review recent heat, wind, or missed watering.",
       "Review recent fertilizing history for a possible salt buildup.",
-      "Water deeply and mulch before assuming a disease is involved."
+      "For indoor plants, check whether the room is especially dry, particularly during heating season."
     ],
     patterns: [
       {
-        observation: "Browning limited to tips and margins",
+        observation: "Browning limited to tips and margins outdoors",
         likelyCause: "Leaf scorch from heat, wind, or drought",
         checkFirst: "Check recent watering and weather"
       },
@@ -379,9 +382,14 @@ export const symptoms: Symptom[] = [
         observation: "Browning after a recent heavy feeding",
         likelyCause: "Fertilizer salt burn",
         checkFirst: "Review recent fertilizing history"
+      },
+      {
+        observation: "Crispy tips on an indoor tropical plant, worse in winter",
+        likelyCause: "Low indoor humidity",
+        checkFirst: "Check room humidity, especially near heating vents"
       }
     ],
-    sources: ["src-pennstate-watering"]
+    sources: ["src-pennstate-watering", "src-clemson-houseplants"]
   },
   {
     slug: "black-spot-on-leaves",
@@ -452,5 +460,174 @@ export const symptoms: Symptom[] = [
       }
     ],
     sources: ["src-umd-seedlings"]
+  },
+  {
+    slug: "roots-growing-out-of-pot",
+    name: "Roots growing out of the pot",
+    questionTitle: "Why are roots growing out of my plant's pot?",
+    description:
+      "Roots visible at the drainage holes or circling the soil surface usually mean the plant has outgrown its container and is root-bound.",
+    quickAnswer:
+      "If water runs straight through the pot without soaking in, the plant likely needs a bigger container.",
+    aliases: ["Root bound plant", "Roots coming out of drainage holes", "Plant outgrew its pot"],
+    bodyArea: "Root zone",
+    urgency: "Low",
+    commonCauses: [{ slug: "root-bound", confidence: 82 }],
+    relatedSymptoms: ["wilting", "yellow-leaves"],
+    recommendedTools: ["soil-moisture-meters"],
+    fieldCheck:
+      "Gently slide the plant out of its pot if possible. Roots densely circling the outside of the root ball confirm it's root-bound rather than a watering or light issue.",
+    firstSteps: [
+      "Check the drainage holes and soil surface for visible circling roots.",
+      "Note how long it's been since the plant was last repotted.",
+      "Water on a normal schedule and see whether water is absorbed or runs straight through."
+    ],
+    patterns: [
+      {
+        observation: "Roots visible at drainage holes or soil surface",
+        likelyCause: "Root-bound plant that has outgrown its pot",
+        checkFirst: "Check how long since the last repotting"
+      },
+      {
+        observation: "Water runs straight through without soaking in",
+        likelyCause: "Root mass has displaced most of the soil",
+        checkFirst: "Slide the plant out of its pot to inspect the roots"
+      }
+    ],
+    sources: ["src-clemson-houseplants"]
+  },
+  {
+    slug: "stippled-or-webbed-leaves",
+    name: "Stippled or webbed leaves",
+    questionTitle: "Why do my plant's leaves have tiny light spots or webbing?",
+    description:
+      "Fine, light-colored speckling on leaves, especially with webbing between leaves or stems, points to spider mites rather than a nutrient or watering problem.",
+    quickAnswer:
+      "Check the undersides of leaves and tap a leaf over white paper to look for tiny moving specks before treating anything else.",
+    aliases: ["Tiny webs on plant", "Speckled leaves", "Dusty-looking leaves"],
+    bodyArea: "Leaf",
+    urgency: "Medium",
+    commonCauses: [{ slug: "spider-mites", confidence: 85 }],
+    relatedSymptoms: ["curling-leaves", "yellow-leaves"],
+    recommendedTools: ["neem-oil"],
+    fieldCheck:
+      "Hold a plain white sheet of paper under a leaf and tap it firmly. Tiny specks that start moving on the paper confirm spider mites.",
+    firstSteps: [
+      "Inspect the undersides of leaves and any webbing between leaves or stems.",
+      "Isolate the plant from others while you confirm and treat, since mites spread easily.",
+      "Increase humidity around the plant, since mites thrive in dry air."
+    ],
+    patterns: [
+      {
+        observation: "Fine light stippling with visible webbing",
+        likelyCause: "Spider mites",
+        checkFirst: "Tap a leaf over white paper to check for moving specks"
+      }
+    ],
+    sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
+    slug: "small-flies-around-soil",
+    name: "Small flies around the soil",
+    questionTitle: "Why are there small flies around my houseplant's soil?",
+    description:
+      "Small dark flies hovering near the soil surface are almost always fungus gnats, drawn to potting soil that has stayed damp for too long.",
+    quickAnswer:
+      "Let the top of the soil dry out more between waterings before treating for anything else.",
+    aliases: ["Gnats in houseplants", "Fruit flies in soil", "Bugs flying around plant"],
+    bodyArea: "Root zone",
+    urgency: "Low",
+    commonCauses: [{ slug: "fungus-gnats", confidence: 88 }],
+    relatedSymptoms: ["soil-staying-wet"],
+    recommendedTools: ["sticky-traps", "soil-moisture-meters"],
+    fieldCheck:
+      "Check whether the top inch of soil has stayed damp for several days. Fungus gnats need consistently moist soil to breed.",
+    firstSteps: [
+      "Let the soil surface dry out more between waterings.",
+      "Set out a sticky trap to confirm and reduce the adult population.",
+      "Avoid watering on a fixed schedule; check the soil first instead."
+    ],
+    patterns: [
+      {
+        observation: "Small flies near the soil, worse after watering",
+        likelyCause: "Fungus gnats breeding in consistently moist soil",
+        checkFirst: "Check how damp the top inch of soil has stayed"
+      }
+    ],
+    sources: ["src-clemson-houseplants"]
+  },
+  {
+    slug: "sticky-residue-or-cottony-spots",
+    name: "Sticky residue or cottony spots",
+    questionTitle: "What are the sticky spots or cottony bumps on my plant?",
+    description:
+      "Cottony white masses in leaf joints or small waxy bumps on stems, often paired with a sticky residue on and around the plant, point to mealybugs or scale.",
+    quickAnswer:
+      "Check leaf joints and stems closely for cottony clusters or small bumps before assuming it's dirt or damage.",
+    aliases: ["White fuzzy spots on plant", "Sticky leaves houseplant", "Brown bumps on stem"],
+    bodyArea: "Stem",
+    urgency: "Medium",
+    commonCauses: [{ slug: "mealybugs-or-scale", confidence: 85 }],
+    relatedSymptoms: ["curling-leaves", "yellow-leaves"],
+    recommendedTools: ["neem-oil"],
+    fieldCheck:
+      "Look closely at leaf joints and along stems. Cottony clusters that don't rub off easily, or small brown waxy bumps, confirm mealybugs or scale rather than dirt or disease.",
+    firstSteps: [
+      "Isolate the plant from others while you confirm and treat.",
+      "Wipe visible pests off with a cotton swab dipped in rubbing alcohol before spraying anything.",
+      "Check new plants closely before placing them near this one, since this is a common way infestations spread."
+    ],
+    patterns: [
+      {
+        observation: "Cottony white masses in leaf joints",
+        likelyCause: "Mealybugs",
+        checkFirst: "Check leaf joints and the undersides of leaves"
+      },
+      {
+        observation: "Small waxy brown bumps on stems that don't rub off",
+        likelyCause: "Scale",
+        checkFirst: "Inspect stems closely for raised bumps"
+      }
+    ],
+    sources: ["src-ucipm-powdery-mildew"]
+  },
+  {
+    slug: "sudden-leaf-drop",
+    name: "Sudden leaf drop",
+    questionTitle: "Why did my plant suddenly drop its leaves?",
+    description:
+      "A houseplant dropping several leaves at once, without gradual yellowing first, usually points to a sudden environmental change rather than a slow watering or nutrient problem.",
+    quickAnswer:
+      "Check for cold drafts, heating vents, or a recent move before assuming it's a watering problem.",
+    aliases: ["Plant losing leaves fast", "Leaves falling off suddenly", "Plant dropped all its leaves"],
+    bodyArea: "Whole plant",
+    urgency: "Medium",
+    commonCauses: [
+      { slug: "temperature-stress", confidence: 55 },
+      { slug: "underwatering", confidence: 35 },
+      { slug: "overwatering", confidence: 35 }
+    ],
+    relatedSymptoms: ["wilting", "yellow-leaves"],
+    recommendedTools: ["soil-moisture-meters"],
+    fieldCheck:
+      "Check the plant's location for nearby drafts, exterior doors, or heating and cooling vents before checking the soil.",
+    firstSteps: [
+      "Check for cold drafts, heating vents, or air conditioning blowing directly on the plant.",
+      "Note whether the drop followed a recent move or a sudden temperature swing.",
+      "Check soil moisture to rule out a watering extreme before assuming it's temperature-related."
+    ],
+    patterns: [
+      {
+        observation: "Leaf drop after a move or temperature swing",
+        likelyCause: "Temperature stress or shock",
+        checkFirst: "Check for drafts, vents, or a recent location change"
+      },
+      {
+        observation: "Leaf drop with consistently dry or consistently wet soil",
+        likelyCause: "Underwatering or overwatering",
+        checkFirst: "Check soil moisture at the root zone"
+      }
+    ],
+    sources: ["src-clemson-houseplants", "src-pennstate-watering"]
   }
 ];
