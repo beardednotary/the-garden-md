@@ -54,7 +54,7 @@ export function SearchBox({
       : "w-32 border border-border bg-paper px-3 py-1.5 text-sm text-ink outline-none placeholder:text-muted md:w-40";
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className={`relative ${variant === "hero" ? "w-full" : "inline-block"}`}>
       <form onSubmit={handleSubmit}>
         {variant === "hero" && (
           <label htmlFor="search" className="mb-2 block text-sm font-semibold text-green-dark">
@@ -77,7 +77,7 @@ export function SearchBox({
         />
       </form>
       {open && results.length > 0 && (
-        <ul className="absolute z-10 mt-1 w-full min-w-[260px] border border-border bg-paper-light shadow-panel">
+        <ul className="absolute left-0 z-10 mt-1 w-[max(100%,260px)] max-w-[calc(100vw-2rem)] border border-border bg-paper-light shadow-panel md:left-auto md:right-0">
           {results.map((entry) => (
             <li key={entry.href}>
               <Link
@@ -93,7 +93,7 @@ export function SearchBox({
         </ul>
       )}
       {open && query.trim() && results.length === 0 && (
-        <div className="absolute z-10 mt-1 w-full min-w-[260px] border border-border bg-paper-light p-4 text-sm text-muted shadow-panel">
+        <div className="absolute left-0 z-10 mt-1 w-[max(100%,260px)] max-w-[calc(100vw-2rem)] border border-border bg-paper-light p-4 text-sm text-muted shadow-panel md:left-auto md:right-0">
           No matches yet. Try a different word.
         </div>
       )}

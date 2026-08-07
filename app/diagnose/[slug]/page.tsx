@@ -7,6 +7,7 @@ import { QuickTable } from "@/components/QuickTable";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SidebarPanel } from "@/components/SidebarPanel";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
+import { getLastModifiedDate } from "@/lib/lastModified";
 import { getCause, getSource, getSymptom, isDefined, siteUrl, symptoms, tools } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -49,6 +50,12 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
 
   const relevantTools = tools.filter((entry) => symptom.recommendedTools.includes(entry.slug));
   const relatedSources = symptom.sources.map((id) => getSource(id)).filter(isDefined);
+  const lastModified = getLastModifiedDate("data/symptoms.ts");
+  const reviewedDateLabel = lastModified.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -58,6 +65,7 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
         headline: symptom.questionTitle ?? symptom.name,
         description: symptom.description,
         url: `${siteUrl}/diagnose/${symptom.slug}`,
+        dateModified: lastModified.toISOString(),
         author: { "@type": "Person", name: "Sam Ellery" },
         publisher: { "@type": "Organization", name: "GardenMD", url: siteUrl }
       },
@@ -83,7 +91,7 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
           <h1 className="mt-3 font-serif text-4xl text-green-dark md:text-5xl">{symptom.questionTitle ?? symptom.name}</h1>
           <p className="mt-4 text-lg text-muted">{symptom.quickAnswer}</p>
           <p className="mt-4 text-sm text-muted">
-            Last reviewed: August 5, 2026 · Sources:{" "}
+            Last reviewed: {reviewedDateLabel} · Sources:{" "}
             {relatedSources.map((source, index) => (
               <span key={source.id}>
                 {index > 0 ? ", " : ""}

@@ -1,28 +1,6 @@
 import type { MetadataRoute } from "next";
-import { execSync } from "node:child_process";
+import { getLastModifiedDate } from "@/lib/lastModified";
 import { calculators, causes, plants, siteUrl, solutions, symptoms, systems, tools } from "@/lib/content";
-
-/**
- * Real last-modified date for a file, from git history. Falls back to the
- * build time if git isn't available or the file has no history in this
- * checkout (e.g. a shallow clone), so this never breaks the build.
- */
-function lastModifiedFor(relativePath: string): Date {
-  try {
-    const output = execSync(`git log -1 --format=%aI -- "${relativePath}"`, {
-      cwd: process.cwd(),
-      stdio: ["ignore", "pipe", "ignore"]
-    })
-      .toString()
-      .trim();
-    if (output) {
-      return new Date(output);
-    }
-  } catch {
-    // Fall through to build time below.
-  }
-  return new Date();
-}
 
 const staticRoutes = [
   { path: "", file: "app/page.tsx" },
@@ -55,11 +33,11 @@ const entityGroups: Array<{ items: Array<{ slug: string }>; prefix: string; file
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries = staticRoutes.map(({ path, file }) => ({
     url: `${siteUrl}${path}`,
-    lastModified: lastModifiedFor(file)
+    lastModified: getLastModifiedDate(file)
   }));
 
   const entityEntries = entityGroups.flatMap(({ items, prefix, file }) => {
-    const lastModified = lastModifiedFor(file);
+    const lastModified = getLastModifiedDate(file);
     return items.map((entry) => ({
       url: `${siteUrl}${prefix}/${entry.slug}`,
       lastModified
