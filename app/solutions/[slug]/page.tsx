@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FieldNote } from "@/components/FieldNote";
 import { SidebarPanel } from "@/components/SidebarPanel";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
-import { getSolution, getTool, isDefined, solutions } from "@/lib/content";
+import { getSolution, getTool, isDefined, siteUrl, solutions } from "@/lib/content";
 
 export function generateStaticParams() {
   return solutions.map((entry) => ({ slug: entry.slug }));
@@ -19,6 +19,21 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
   }
 
   const relatedTools = solution.requiredTools.map((toolSlug) => getTool(toolSlug)).filter(isDefined);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: solution.name,
+    description: solution.summary,
+    url: `${siteUrl}/solutions/${solution.slug}`,
+    step: solution.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      text: step
+    })),
+    author: { "@type": "Person", name: "Sam Ellery" },
+    publisher: { "@type": "Organization", name: "GardenMD", url: siteUrl }
+  };
 
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
@@ -48,6 +63,7 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
               <YouTubeEmbed video={solution.video} />
             </section>
           )}
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         </article>
         <aside className="space-y-5">
           <SidebarPanel title="Helpful Tools">

@@ -52,10 +52,26 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
-    name: symptom.name,
-    description: symptom.description,
-    url: `${siteUrl}/diagnose/${symptom.slug}`
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: symptom.questionTitle ?? symptom.name,
+        description: symptom.description,
+        url: `${siteUrl}/diagnose/${symptom.slug}`,
+        author: { "@type": "Person", name: "Sam Ellery" },
+        publisher: { "@type": "Organization", name: "GardenMD", url: siteUrl }
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: symptom.questionTitle ?? symptom.name,
+            acceptedAnswer: { "@type": "Answer", text: symptom.quickAnswer }
+          }
+        ]
+      }
+    ]
   };
 
   return (

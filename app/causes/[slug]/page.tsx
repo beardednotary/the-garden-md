@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ContentImage } from "@/components/ContentImage";
 import { SidebarPanel } from "@/components/SidebarPanel";
 import { SectionHeading } from "@/components/SectionHeading";
-import { causes, getCause, getSolution, getSource, getTool, isDefined } from "@/lib/content";
+import { causes, getCause, getSolution, getSource, getTool, isDefined, siteUrl } from "@/lib/content";
 
 export function generateStaticParams() {
   return causes.map((entry) => ({ slug: entry.slug }));
@@ -27,6 +27,16 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
   const relatedSolutions = cause.fixes.map((solutionSlug) => getSolution(solutionSlug)).filter(isDefined);
   const relatedTools = cause.tools.map((toolSlug) => getTool(toolSlug)).filter(isDefined);
   const relatedSources = cause.sources.map((id) => getSource(id)).filter(isDefined);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: cause.name,
+    description: cause.description,
+    url: `${siteUrl}/causes/${cause.slug}`,
+    author: { "@type": "Person", name: "Sam Ellery" },
+    publisher: { "@type": "Organization", name: "GardenMD", url: siteUrl }
+  };
 
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
@@ -62,6 +72,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
               ))}
             </div>
           </section>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         </article>
         <aside className="space-y-5">
           <SidebarPanel title="Symptoms Caused">
