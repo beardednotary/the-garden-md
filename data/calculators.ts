@@ -44,6 +44,30 @@ export const calculators: Calculator[] = [
       "A planning guide for line length, timer placement, and emitter spacing in a basic bed setup.",
     relatedTools: ["hose-timers", "drip-irrigation-kits"],
     formulaLabel: "bed length x rows with allowance for bends and connections",
-    config: { kind: "drip" }
+    config: { kind: "drip" },
+    context:
+      "A drip system's real advantage isn't convenience, it's consistency. Most watering-related plant problems come from swinging between too dry and too wet, not from an absolute lack of water, and delivering the same amount to the same spot on the same schedule removes most of that guesswork. The tradeoff is upfront setup: pressure, emitter spacing, and line length all need to be roughly right before it becomes as effortless as it sounds.",
+    sources: ["src-pennstate-watering"],
+    relatedContent: [
+      { href: "/causes/underwatering", label: "Underwatering" },
+      { href: "/causes/overwatering", label: "Overwatering" },
+      { href: "/systems/planning-a-garden-irrigation-system", label: "Planning a garden irrigation system" }
+    ]
+  },
+  {
+    slug: "seed-starting-calculator",
+    name: "Seed starting calculator",
+    description:
+      "Enter your last spring frost date to see when to start seeds indoors and when it's safe to move common crops outside.",
+    relatedTools: ["grow-lights"],
+    formulaLabel: "last frost date +/- weeks per crop",
+    config: { kind: "seedStarting" },
+    context:
+      "Timing is the single biggest lever in whether a transplant survives its first week outside. Starting too early usually means leggy, root-bound seedlings that have sat in trays too long; starting too late means a shorter season and a smaller harvest. The ranges here are deliberately wide, since a \"last frost date\" is a statistical average, not a guarantee — a warm spring can bring it early, and a late cold snap can still catch you off guard even after the average date has passed.",
+    sources: ["src-cornell-seed-starting"],
+    relatedContent: [
+      { href: "/diagnose/leggy-stretched-growth", label: "Leggy, stretched growth" },
+      { href: "/causes/insufficient-light", label: "Insufficient light" }
+    ]
   }
 ];

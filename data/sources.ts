@@ -35,5 +35,12 @@ export const sources: Source[] = [
     topic: "Houseplant care, humidity, and common indoor pests",
     publicationDate: "2025",
     url: "https://hgic.clemson.edu/"
+  },
+  {
+    id: "src-cornell-seed-starting",
+    organization: "Cornell University Cooperative Extension",
+    topic: "Vegetable seed starting and frost-date planting guides",
+    publicationDate: "2025",
+    url: "https://gardening.cornell.edu/"
   }
 ];

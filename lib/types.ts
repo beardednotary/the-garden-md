@@ -115,7 +115,15 @@ export type DripCalculatorConfig = {
   kind: "drip";
 };
 
-export type CalculatorConfig = VolumeCalculatorConfig | ContainerCalculatorConfig | DripCalculatorConfig;
+export type SeedStartingCalculatorConfig = {
+  kind: "seedStarting";
+};
+
+export type CalculatorConfig =
+  | VolumeCalculatorConfig
+  | ContainerCalculatorConfig
+  | DripCalculatorConfig
+  | SeedStartingCalculatorConfig;
 
 export type Calculator = {
   slug: string;
@@ -124,6 +132,9 @@ export type Calculator = {
   relatedTools: string[];
   formulaLabel: string;
   config: CalculatorConfig;
+  context?: string;
+  sources?: string[];
+  relatedContent?: Array<{ href: string; label: string }>;
 };
 
 export type SystemEntry = {
