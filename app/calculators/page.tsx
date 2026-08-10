@@ -3,7 +3,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { calculators } from "@/lib/content";
 
 export const metadata = {
-  title: "Calculators"
+  title: "Calculators",
+  description: "Six calculators for soil, mulch, compost, containers, drip irrigation planning, and seed starting timing.",
+  alternates: { canonical: "/calculators" }
 };
 
 const materialSlugs = ["raised-bed-soil-calculator", "container-soil-calculator", "mulch-calculator", "compost-calculator"];

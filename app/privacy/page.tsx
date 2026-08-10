@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Privacy Policy",
+  description: "What information GardenMD collects, including Google Analytics and Amazon Associates cookies.",
+  alternates: { canonical: "/privacy" }
+};
+
 export default function PrivacyPage() {
   return (
     <div className="mx-auto max-w-prose px-4 py-10 md:px-6">

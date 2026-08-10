@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Contact",
+  description: "Send corrections, feedback, or a garden problem GardenMD hasn't covered yet.",
+  alternates: { canonical: "/contact" }
+};
+
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-prose px-4 py-10 md:px-6">

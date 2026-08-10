@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Editorial Process",
+  description: "How GardenMD sources and checks claims before publishing, and why tools are mentioned only when they help.",
+  alternates: { canonical: "/editorial-process" }
+};
+
 export default function EditorialProcessPage() {
   return (
     <div className="mx-auto max-w-prose px-4 py-10 md:px-6">

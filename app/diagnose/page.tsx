@@ -3,7 +3,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { symptoms } from "@/lib/content";
 
 export const metadata = {
-  title: "Diagnose"
+  title: "Diagnose",
+  description: "Browse common garden symptoms and narrow down the likely cause before you treat, water, or buy anything.",
+  alternates: { canonical: "/diagnose" }
 };
 
 export default function DiagnoseIndexPage() {

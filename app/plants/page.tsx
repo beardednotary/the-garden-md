@@ -2,6 +2,12 @@ import { CardGrid } from "@/components/CardGrid";
 import { SectionHeading } from "@/components/SectionHeading";
 import { plants } from "@/lib/content";
 
+export const metadata = {
+  title: "Plants",
+  description: "Common problems and watering systems organized by plant, from tomatoes to houseplants.",
+  alternates: { canonical: "/plants" }
+};
+
 export default function PlantsIndexPage() {
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">

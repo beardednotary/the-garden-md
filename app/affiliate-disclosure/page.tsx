@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Affiliate Disclosure",
+  description: "How GardenMD uses Amazon Associates links and how that does or doesn't affect what's recommended.",
+  alternates: { canonical: "/affiliate-disclosure" }
+};
+
 export default function AffiliateDisclosurePage() {
   return (
     <div className="mx-auto max-w-prose px-4 py-10 md:px-6">

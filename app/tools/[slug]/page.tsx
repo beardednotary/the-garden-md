@@ -9,6 +9,14 @@ export function generateStaticParams() {
   return tools.map((entry) => ({ slug: entry.slug }));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const tool = getTool(slug);
+  return tool
+    ? { title: tool.name, description: tool.description, alternates: { canonical: `/tools/${tool.slug}` } }
+    : {};
+}
+
 export default async function ToolPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const tool = getTool(slug);

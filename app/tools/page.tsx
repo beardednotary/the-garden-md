@@ -2,6 +2,12 @@ import { CardGrid } from "@/components/CardGrid";
 import { SectionHeading } from "@/components/SectionHeading";
 import { tools } from "@/lib/content";
 
+export const metadata = {
+  title: "Tools",
+  description: "Garden tools and equipment notes, focused on what's useful, what to look for, and when you don't need to buy anything.",
+  alternates: { canonical: "/tools" }
+};
+
 export default function ToolsIndexPage() {
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">

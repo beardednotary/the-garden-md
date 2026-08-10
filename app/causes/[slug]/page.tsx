@@ -13,7 +13,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const cause = getCause(slug);
-  return cause ? { title: cause.name, description: cause.description } : {};
+  return cause
+    ? { title: cause.name, description: cause.description, alternates: { canonical: `/causes/${cause.slug}` } }
+    : {};
 }
 
 export default async function CausePage({ params }: { params: Promise<{ slug: string }> }) {

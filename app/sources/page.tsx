@@ -1,5 +1,11 @@
 import { sources } from "@/lib/content";
 
+export const metadata = {
+  title: "Sources",
+  description: "The university extension offices and research organizations cited throughout GardenMD.",
+  alternates: { canonical: "/sources" }
+};
+
 export default function SourcesPage() {
   return (
     <div className="mx-auto max-w-shell px-4 py-10 md:px-6">

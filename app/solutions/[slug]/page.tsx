@@ -10,6 +10,14 @@ export function generateStaticParams() {
   return solutions.map((entry) => ({ slug: entry.slug }));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const solution = getSolution(slug);
+  return solution
+    ? { title: solution.name, description: solution.summary, alternates: { canonical: `/solutions/${solution.slug}` } }
+    : {};
+}
+
 export default async function SolutionPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const solution = getSolution(slug);

@@ -12,6 +12,14 @@ export function generateStaticParams() {
   return calculators.map((entry) => ({ slug: entry.slug }));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const calculator = getCalculator(slug);
+  return calculator
+    ? { title: calculator.name, description: calculator.description, alternates: { canonical: `/calculators/${calculator.slug}` } }
+    : {};
+}
+
 export default async function CalculatorPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const calculator = getCalculator(slug);

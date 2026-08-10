@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Terms of Use",
+  description: "The terms for using GardenMD, including what the site is and isn't, and how affiliate links work.",
+  alternates: { canonical: "/terms" }
+};
+
 export default function TermsPage() {
   return (
     <div className="mx-auto max-w-prose px-4 py-10 md:px-6">

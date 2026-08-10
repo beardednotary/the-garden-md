@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "About",
+  description: "Who writes GardenMD and why the site leans on cited university extension research instead of personal opinion.",
+  alternates: { canonical: "/about" }
+};
+
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-prose px-4 py-10 md:px-6">

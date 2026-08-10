@@ -2,6 +2,12 @@ import { CardGrid } from "@/components/CardGrid";
 import { SectionHeading } from "@/components/SectionHeading";
 import { solutions } from "@/lib/content";
 
+export const metadata = {
+  title: "Solutions",
+  description: "Fixes for common garden problems, ranked by difficulty, time, and cost.",
+  alternates: { canonical: "/solutions" }
+};
+
 export default function SolutionsIndexPage() {
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
