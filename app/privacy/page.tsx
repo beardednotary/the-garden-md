@@ -10,7 +10,7 @@ export default function PrivacyPage() {
   return (
     <div className="mx-auto max-w-prose px-4 py-10 md:px-6">
       <h1 className="font-serif text-4xl text-green-dark">Privacy Policy</h1>
-      <p className="mt-4 text-sm text-muted">Last updated: August 4, 2026</p>
+      <p className="mt-4 text-sm text-muted">Last updated: August 9, 2026</p>
 
       <p className="mt-6">
         GardenMD is a reference site for diagnosing common garden problems. This page explains what
@@ -19,10 +19,22 @@ export default function PrivacyPage() {
 
       <h2 className="mt-10 font-serif text-2xl text-green-dark">Information We Collect</h2>
       <p className="mt-3">
-        GardenMD does not require an account and does not collect personal information directly. We use
-        Google Analytics to understand which pages are useful, which collects standard analytics data such
-        as pages viewed, approximate location, device and browser type, and which links you click, including
-        outbound links to retailers.
+        GardenMD does not require an account. We use Google Analytics to understand which pages are useful,
+        which collects standard analytics data such as pages viewed, approximate location, device and
+        browser type, and which links you click, including outbound links to retailers. If you sign up for
+        the Quick Reference Guide or any other email opt-in on this site, we collect the email address you
+        provide.
+      </p>
+
+      <h2 className="mt-10 font-serif text-2xl text-green-dark">Email List</h2>
+      <p className="mt-3">
+        Signing up for a downloadable guide adds your email to a list used to send occasional guides, new
+        content, and relevant updates from GardenMD. Signup forms are processed through Formspree. You can
+        unsubscribe at any time using the link in any email we send, or by contacting us through the{" "}
+        <Link href="/contact" className="underline-offset-4 hover:underline">
+          contact page
+        </Link>
+        .
       </p>
 
       <h2 className="mt-10 font-serif text-2xl text-green-dark">Cookies and Tracking</h2>
@@ -53,9 +65,9 @@ export default function PrivacyPage() {
 
       <h2 className="mt-10 font-serif text-2xl text-green-dark">Third-Party Services</h2>
       <p className="mt-3">
-        This site is hosted on Vercel and uses Google Analytics and Amazon Associates as described above.
-        Each of these services collects and processes data under its own privacy policy, separate from this
-        one.
+        This site is hosted on Vercel and uses Google Analytics, Amazon Associates, and Formspree (for email
+        signups) as described above. Each of these services collects and processes data under its own
+        privacy policy, separate from this one.
       </p>
 
       <h2 className="mt-10 font-serif text-2xl text-green-dark">Children's Privacy</h2>

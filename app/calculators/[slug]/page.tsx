@@ -5,6 +5,7 @@ import { ContainerCalculator } from "@/components/calculators/ContainerCalculato
 import { DripCalculator } from "@/components/calculators/DripCalculator";
 import { SeedStartingCalculator } from "@/components/calculators/SeedStartingCalculator";
 import { VolumeCalculator } from "@/components/calculators/VolumeCalculator";
+import { EmailCapture } from "@/components/EmailCapture";
 import { SidebarPanel } from "@/components/SidebarPanel";
 import { calculators, getCalculator, getSource, getTool, isDefined } from "@/lib/content";
 
@@ -68,6 +69,10 @@ export default async function CalculatorPage({ params }: { params: Promise<{ slu
               )}
             </section>
           )}
+
+          <div className="mt-8">
+            <EmailCapture source={`calculator-${calculator.slug}`} />
+          </div>
         </article>
 
         <aside className="space-y-5">
