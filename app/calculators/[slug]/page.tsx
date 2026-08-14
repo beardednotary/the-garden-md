@@ -7,7 +7,8 @@ import { SeedStartingCalculator } from "@/components/calculators/SeedStartingCal
 import { VolumeCalculator } from "@/components/calculators/VolumeCalculator";
 import { EmailCapture } from "@/components/EmailCapture";
 import { SidebarPanel } from "@/components/SidebarPanel";
-import { calculators, getCalculator, getSource, getTool, isDefined } from "@/lib/content";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
+import { calculators, getCalculator, getSource, getTool, isDefined, siteUrl } from "@/lib/content";
 
 export function generateStaticParams() {
   return calculators.map((entry) => ({ slug: entry.slug }));
@@ -32,9 +33,13 @@ export default async function CalculatorPage({ params }: { params: Promise<{ slu
   const relatedTools = calculator.relatedTools.map((toolSlug) => getTool(toolSlug)).filter(isDefined);
   const relatedSources = (calculator.sources ?? []).map((id) => getSource(id)).filter(isDefined);
 
+  const breadcrumbItems = [{ href: "/", label: "Home" }, { href: "/calculators", label: "Calculators" }, { label: calculator.name }];
+  const breadcrumbJsonLd = buildBreadcrumbSchema(breadcrumbItems, siteUrl);
+
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/calculators", label: "Calculators" }, { label: calculator.name }]} />
+      <Breadcrumbs items={breadcrumbItems} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="mt-5 grid gap-10 lg:grid-cols-[minmax(0,760px)_320px]">
         <article>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-dark">Calculator</p>
@@ -42,7 +47,11 @@ export default async function CalculatorPage({ params }: { params: Promise<{ slu
           <p className="mt-4 text-lg text-muted">{calculator.description}</p>
 
           {calculator.config.kind === "volume" && (
-            <VolumeCalculator bagSizeCubicFeet={calculator.config.bagSizeCubicFeet} bagLabel={calculator.config.bagLabel} />
+            <VolumeCalculator
+              bagSizeCubicFeet={calculator.config.bagSizeCubicFeet}
+              bagLabel={calculator.config.bagLabel}
+              showMelsMixBreakdown={calculator.config.showMelsMixBreakdown}
+            />
           )}
           {calculator.config.kind === "container" && <ContainerCalculator />}
           {calculator.config.kind === "drip" && <DripCalculator />}

@@ -7,6 +7,8 @@ import { QuickTable } from "@/components/QuickTable";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SidebarPanel } from "@/components/SidebarPanel";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
+import { EmailCapture } from "@/components/EmailCapture";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 import { getLastModifiedDate } from "@/lib/lastModified";
 import { getCause, getSource, getSymptom, isDefined, siteUrl, symptoms, tools } from "@/lib/content";
 
@@ -82,9 +84,13 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
     ]
   };
 
+  const breadcrumbItems = [{ href: "/", label: "Home" }, { href: "/diagnose", label: "Diagnose" }, { label: symptom.name }];
+  const breadcrumbJsonLd = buildBreadcrumbSchema(breadcrumbItems, siteUrl);
+
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/diagnose", label: "Diagnose" }, { label: symptom.name }]} />
+      <Breadcrumbs items={breadcrumbItems} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="mt-5 grid gap-10 lg:grid-cols-[minmax(0,760px)_320px]">
         <article>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-dark">Diagnostic Guide</p>
@@ -174,6 +180,10 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
               ))}
             </div>
           </section>
+
+          <div className="mt-10">
+            <EmailCapture source={`diagnose-${symptom.slug}`} />
+          </div>
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         </article>
 

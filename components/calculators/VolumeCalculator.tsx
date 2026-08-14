@@ -4,10 +4,12 @@ import { useState } from "react";
 
 export function VolumeCalculator({
   bagSizeCubicFeet,
-  bagLabel
+  bagLabel,
+  showMelsMixBreakdown = false
 }: {
   bagSizeCubicFeet: number;
   bagLabel: string;
+  showMelsMixBreakdown?: boolean;
 }) {
   const [length, setLength] = useState("");
   const [width, setWidth] = useState("");
@@ -86,6 +88,31 @@ export function VolumeCalculator({
           </p>
         )}
       </section>
+
+      {showMelsMixBreakdown && valid && (
+        <section className="mt-8 border border-border bg-paper-light p-5 shadow-panel">
+          <h2 className="font-serif text-2xl text-green-dark">Using Mel's Mix?</h2>
+          <p className="mt-3 text-[15px] leading-7">
+            The Square Foot Gardening recipe is equal parts compost, peat moss or coco coir, and
+            vermiculite. For {cubicFeet.toFixed(1)} cubic feet total, that's roughly:
+          </p>
+          <ul className="mt-3 space-y-1 text-[15px]">
+            <li>
+              <strong>Compost:</strong> {(cubicFeet / 3).toFixed(1)} cubic feet
+            </li>
+            <li>
+              <strong>Peat moss or coco coir:</strong> {(cubicFeet / 3).toFixed(1)} cubic feet
+            </li>
+            <li>
+              <strong>Vermiculite:</strong> {(cubicFeet / 3).toFixed(1)} cubic feet
+            </li>
+          </ul>
+          <p className="mt-3 text-xs text-muted">
+            Blend from several compost sources rather than one, since Mel's Mix relies on that variety for
+            nutrients.
+          </p>
+        </section>
+      )}
     </>
   );
 }

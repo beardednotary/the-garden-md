@@ -5,10 +5,10 @@ export const calculators: Calculator[] = [
     slug: "raised-bed-soil-calculator",
     name: "Raised bed soil calculator",
     description:
-      "Estimate cubic feet, cubic yards, and common bag counts for a rectangular raised bed.",
+      "Estimate cubic feet, cubic yards, and common bag counts for a rectangular raised bed, including a Mel's Mix breakdown for Square Foot Gardening.",
     relatedTools: ["raised-bed-tools"],
     formulaLabel: "length x width x (depth / 12)",
-    config: { kind: "volume", bagSizeCubicFeet: 1.5, bagLabel: "1.5 cu ft soil bags" }
+    config: { kind: "volume", bagSizeCubicFeet: 1.5, bagLabel: "1.5 cu ft soil bags", showMelsMixBreakdown: true }
   },
   {
     slug: "container-soil-calculator",

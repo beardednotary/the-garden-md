@@ -4,12 +4,9 @@ Last checked: 2026-08-06
 
 GardenMD has no external links or off-site presence yet. This is a prioritized list of legitimate ways to start earning real links and real (non-bot) visitors, split by type since "backlink" and "gets a human here" aren't always the same thing.
 
-## Confirmed, free, real submission process
+## Corrected: not actually free in practice
 
-| Opportunity | What it is | Fit | Notes |
-| --- | --- | --- | --- |
-| [Feedspot Gardening Blogs](https://bloggers.feedspot.com/gardening-blogs/) | Curated "100 Best Gardening Blogs" roundup with an open submission form (name, email, blog URL) | Good | Verified: free, no payment mentioned, straightforward form at the bottom of the page. Moderate authority backlink if accepted. |
-| [OnToplist – Home & Garden Blogs](https://www.ontoplist.com/home-garden-blogs/) | Blog directory with a submission flow | Okay | Lower authority than Feedspot but free and low effort. Directory links generally carry little SEO weight in 2026 — treat as a minor addition, not a strategy. |
+- **Feedspot** and **OnToplist** — both looked free from the outside (open submission form, no payment mentioned on the page) but turned out to be pay-to-play in practice once actually submitted (2026-08-13, user-confirmed). This is a common pattern for this category of directory: submission is nominally free, but real placement/visibility sits behind a paywall or an indefinite moderation queue. Treat any "submit your blog" directory as pay-to-play until proven otherwise — don't take the submission page's framing at face value.
 
 ## Source of Sources (HARO's real successor)
 
@@ -36,7 +33,6 @@ homehazardsreport-site, cleanproteinlist, and notary-site are all yours. A singl
 
 ## Suggested order
 
-1. Submit to Feedspot now — free, five minutes, no downside.
-2. Sign up for Source of Sources — free, and the payoff (a real editorial backlink) is high enough to be worth the daily email for a while.
-3. Read r/plantclinic's current rules and decide if genuine participation there fits your bandwidth — this is the highest-effort, highest-actual-value item on the list.
-4. Pinterest is worth it but needs pin graphics first, which don't exist yet — flag as a later project, not a today task.
+1. Sign up for Source of Sources — free, and the payoff (a real editorial backlink) is high enough to be worth the daily email for a while.
+2. Read r/plantclinic's current rules and decide if genuine participation there fits your bandwidth — this is the highest-effort, highest-actual-value item on the list.
+3. Pinterest — in progress as of 2026-08-06 (branded pin templates approved).

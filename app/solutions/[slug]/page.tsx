@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FieldNote } from "@/components/FieldNote";
 import { SidebarPanel } from "@/components/SidebarPanel";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 import { getSolution, getTool, isDefined, siteUrl, solutions } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -43,9 +44,13 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
     publisher: { "@type": "Organization", name: "GardenMD", url: siteUrl }
   };
 
+  const breadcrumbItems = [{ href: "/", label: "Home" }, { href: "/solutions", label: "Solutions" }, { label: solution.name }];
+  const breadcrumbJsonLd = buildBreadcrumbSchema(breadcrumbItems, siteUrl);
+
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/solutions", label: "Solutions" }, { label: solution.name }]} />
+      <Breadcrumbs items={breadcrumbItems} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="mt-5 grid gap-10 lg:grid-cols-[minmax(0,760px)_320px]">
         <article>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-dark">Solution Guide</p>

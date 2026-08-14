@@ -105,6 +105,7 @@ export type VolumeCalculatorConfig = {
   kind: "volume";
   bagSizeCubicFeet: number;
   bagLabel: string;
+  showMelsMixBreakdown?: boolean;
 };
 
 export type ContainerCalculatorConfig = {

@@ -2,7 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { SidebarPanel } from "@/components/SidebarPanel";
-import { getPlant, getSystem, isDefined, plants } from "@/lib/content";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
+import { getPlant, getSystem, isDefined, plants, siteUrl } from "@/lib/content";
 
 export function generateStaticParams() {
   return plants.map((entry) => ({ slug: entry.slug }));
@@ -26,9 +27,13 @@ export default async function PlantPage({ params }: { params: Promise<{ slug: st
 
   const relatedSystems = plant.recommendedSystems.map((systemSlug) => getSystem(systemSlug)).filter(isDefined);
 
+  const breadcrumbItems = [{ href: "/", label: "Home" }, { href: "/plants", label: "Plants" }, { label: plant.name }];
+  const breadcrumbJsonLd = buildBreadcrumbSchema(breadcrumbItems, siteUrl);
+
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/plants", label: "Plants" }, { label: plant.name }]} />
+      <Breadcrumbs items={breadcrumbItems} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="mt-5 grid gap-10 lg:grid-cols-[minmax(0,760px)_320px]">
         <article className="border border-border bg-paper-light p-6 shadow-panel">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-dark">Plant Guide</p>

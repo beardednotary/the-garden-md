@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { FieldNote } from "@/components/FieldNote";
-import { tools, getTool } from "@/lib/content";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
+import { tools, getTool, siteUrl } from "@/lib/content";
 
 export function generateStaticParams() {
   return tools.map((entry) => ({ slug: entry.slug }));
@@ -25,9 +26,13 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
+  const breadcrumbItems = [{ href: "/", label: "Home" }, { href: "/tools", label: "Tools" }, { label: tool.name }];
+  const breadcrumbJsonLd = buildBreadcrumbSchema(breadcrumbItems, siteUrl);
+
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/tools", label: "Tools" }, { label: tool.name }]} />
+      <Breadcrumbs items={breadcrumbItems} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <article className="grid gap-10 lg:grid-cols-[minmax(0,760px)_320px]">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-dark">{tool.category}</p>

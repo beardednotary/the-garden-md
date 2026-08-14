@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { SidebarPanel } from "@/components/SidebarPanel";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 import { getSystem, getTool, isDefined, siteUrl, systems } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -36,9 +37,13 @@ export default async function SystemPage({ params }: { params: Promise<{ slug: s
     publisher: { "@type": "Organization", name: "GardenMD", url: siteUrl }
   };
 
+  const breadcrumbItems = [{ href: "/", label: "Home" }, { href: "/systems", label: "Systems" }, { label: system.name }];
+  const breadcrumbJsonLd = buildBreadcrumbSchema(breadcrumbItems, siteUrl);
+
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/systems", label: "Systems" }, { label: system.name }]} />
+      <Breadcrumbs items={breadcrumbItems} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="mt-5 grid gap-10 lg:grid-cols-[minmax(0,760px)_320px]">
         <article className="border border-border bg-paper-light p-6 shadow-panel">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-dark">System Guide</p>

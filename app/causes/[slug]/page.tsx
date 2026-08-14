@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ContentImage } from "@/components/ContentImage";
 import { SidebarPanel } from "@/components/SidebarPanel";
 import { SectionHeading } from "@/components/SectionHeading";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 import { causes, getCause, getSolution, getSource, getTool, isDefined, siteUrl } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -40,9 +41,13 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
     publisher: { "@type": "Organization", name: "GardenMD", url: siteUrl }
   };
 
+  const breadcrumbItems = [{ href: "/", label: "Home" }, { href: "/causes", label: "Causes" }, { label: cause.name }];
+  const breadcrumbJsonLd = buildBreadcrumbSchema(breadcrumbItems, siteUrl);
+
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
-      <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/causes", label: "Causes" }, { label: cause.name }]} />
+      <Breadcrumbs items={breadcrumbItems} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="mt-5 grid gap-10 lg:grid-cols-[minmax(0,760px)_320px]">
         <article>
           <SectionHeading eyebrow={cause.category} title={cause.name} description={cause.description} />
