@@ -89,6 +89,9 @@ export type ToolEntry = {
   description: string;
   featuredProduct: string;
   affiliateUrl: string;
+  context?: string;
+  sources?: string[];
+  relatedContent?: Array<{ href: string; label: string }>;
 };
 
 export type Plant = {

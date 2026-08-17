@@ -3,8 +3,9 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { FieldNote } from "@/components/FieldNote";
+import { SidebarPanel } from "@/components/SidebarPanel";
 import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
-import { tools, getTool, siteUrl } from "@/lib/content";
+import { tools, getTool, getSource, isDefined, siteUrl } from "@/lib/content";
 
 export function generateStaticParams() {
   return tools.map((entry) => ({ slug: entry.slug }));
@@ -28,6 +29,7 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
 
   const breadcrumbItems = [{ href: "/", label: "Home" }, { href: "/tools", label: "Tools" }, { label: tool.name }];
   const breadcrumbJsonLd = buildBreadcrumbSchema(breadcrumbItems, siteUrl);
+  const relatedSources = (tool.sources ?? []).map((id) => getSource(id)).filter(isDefined);
 
   return (
     <div className="mx-auto max-w-shell px-4 py-8 md:px-6">
@@ -64,6 +66,26 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
               ))}
             </ul>
           </section>
+
+          {tool.context && (
+            <section className="mt-8 border border-border bg-paper-light p-5 shadow-panel">
+              <h2 className="font-serif text-2xl text-green-dark">Why this matters</h2>
+              <p className="mt-3 text-[15px] leading-7">{tool.context}</p>
+              {relatedSources.length > 0 && (
+                <p className="mt-4 text-sm text-muted">
+                  Source:{" "}
+                  {relatedSources.map((source, index) => (
+                    <span key={source.id}>
+                      {index > 0 ? ", " : ""}
+                      <a href={source.url} className="underline-offset-4 hover:underline">
+                        {source.organization}
+                      </a>
+                    </span>
+                  ))}
+                </p>
+              )}
+            </section>
+          )}
         </div>
         <aside className="space-y-5">
           <section className="border border-border bg-paper-light p-4 shadow-panel">
@@ -86,6 +108,19 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
               ))}
             </ul>
           </section>
+          {tool.relatedContent && tool.relatedContent.length > 0 && (
+            <SidebarPanel title="Related Reading">
+              <ul className="space-y-2">
+                {tool.relatedContent.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="underline-offset-4 hover:underline">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </SidebarPanel>
+          )}
         </aside>
       </article>
     </div>

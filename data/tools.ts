@@ -19,7 +19,15 @@ export const tools: ToolEntry[] = [
     description:
       "Useful for comparing moisture at different depths before watering again. It should supplement a physical soil check, not replace one.",
     featuredProduct: "XLUX Plant Soil Moisture Meter (battery-free)",
-    affiliateUrl: amazonProductUrl("B0H25GXM85")
+    affiliateUrl: amazonProductUrl("B0H25GXM85"),
+    context:
+      "A moisture meter is most useful as a comparison tool, not as an absolute number. Push the probe down to where the roots actually are, several inches deep in a container and deeper still in a raised bed, since surface soil dries out long before the root zone does and a probe that only reaches an inch will read dry even when there's plenty of water below. Check a few spots and compare readings to each other over time rather than trusting one reading in isolation, and confirm what the meter says with an actual finger check before you water. Cheap or corroded probes can read wrong in either direction, so treat it as a second opinion, not the final word.",
+    sources: ["src-pennstate-watering"],
+    relatedContent: [
+      { href: "/diagnose/wilting", label: "Wilting" },
+      { href: "/diagnose/yellow-leaves", label: "Yellow leaves" },
+      { href: "/causes/overwatering", label: "Overwatering" }
+    ]
   },
   {
     slug: "hose-timers",
@@ -33,8 +41,7 @@ export const tools: ToolEntry[] = [
     description:
       "A basic timer helps keep watering consistent, especially for raised beds and containers that dry unevenly.",
     featuredProduct: "Orbit 62056 One-Outlet Single-Dial Hose Faucet Timer",
-    affiliateUrl:
-      "https://www.amazon.com/dp/B004ROPSOI?ref=t_ac_spc_accepted_tile&linkCode=tr1&tag=beardednotary-20&linkId=B004ROPSOI_1785909055248"
+    affiliateUrl: amazonProductUrl("B004ROPSOI")
   },
   {
     slug: "bypass-pruners",
@@ -48,8 +55,7 @@ export const tools: ToolEntry[] = [
     description:
       "Clean cuts matter when you are removing diseased or crowded growth, especially on plants that need better airflow.",
     featuredProduct: "Felco F-2 Classic Manual Hand Pruner",
-    affiliateUrl:
-      "https://www.amazon.com/dp/B00023RYS6?ref=t_ac_spc_accepted_tile&linkCode=tr1&tag=beardednotary-20&linkId=B00023RYS6_1785909069998"
+    affiliateUrl: amazonProductUrl("B00023RYS6")
   },
   {
     slug: "garden-netting",
@@ -63,8 +69,7 @@ export const tools: ToolEntry[] = [
     description:
       "Netting is most useful when it solves a specific pest or animal problem without trapping or crushing the plant.",
     featuredProduct: "KLEWEE Bird Netting, 7.5 x 100 ft, 3/4\" mesh",
-    affiliateUrl:
-      "https://www.amazon.com/dp/B09XBKKFVN?ref=t_ac_spc_accepted_tile&linkCode=tr1&tag=beardednotary-20&linkId=B09XBKKFVN_1785909069997"
+    affiliateUrl: amazonProductUrl("B09XBKKFVN")
   },
   {
     slug: "raised-bed-tools",
@@ -78,8 +83,7 @@ export const tools: ToolEntry[] = [
     description:
       "A small set of dependable bed tools goes further than a large set of low-quality gadgets.",
     featuredProduct: "FLORA GUARD 6-Piece Garden Tool Set",
-    affiliateUrl:
-      "https://www.amazon.com/dp/B071W8GDW5?ref=t_ac_spc_accepted_tile&linkCode=tr1&tag=beardednotary-20&linkId=B071W8GDW5_1785909093062"
+    affiliateUrl: amazonProductUrl("B071W8GDW5")
   },
   {
     slug: "soil-test-kits",
@@ -107,8 +111,7 @@ export const tools: ToolEntry[] = [
     description:
       "Neem oil is a reasonable first treatment for mild powdery mildew or aphids once airflow and spacing are already addressed, not a substitute for them.",
     featuredProduct: "Bonide Captain Jack's Neem Oil, 16 oz Concentrate",
-    affiliateUrl:
-      "https://www.amazon.com/dp/B006QYSAPQ?ref=t_ac_spc_accepted_tile&linkCode=tr1&tag=beardednotary-20&linkId=B006QYSAPQ_1785909093061"
+    affiliateUrl: amazonProductUrl("B006QYSAPQ")
   },
   {
     slug: "drip-irrigation-kits",
@@ -122,8 +125,15 @@ export const tools: ToolEntry[] = [
     description:
       "A packaged kit is the easiest way to get a first drip system running correctly before you start buying parts separately.",
     featuredProduct: "Rain Bird GARDENKIT Raised Bed Drip Irrigation Kit",
-    affiliateUrl:
-      "https://www.amazon.com/dp/B0BCH7PYCD?ref=t_ac_spc_accepted_tile&linkCode=tr1&tag=beardednotary-20&linkId=B0BCH7PYCD_1785909093060"
+    affiliateUrl: amazonProductUrl("B0BCH7PYCD"),
+    context:
+      "A drip kit's real value isn't saving water, it's consistency at the root zone. The swings between too dry and too wet that make finger-checking unreliable are exactly what a correctly set up kit removes. Fit matters more than price here: a kit sized for one raised bed on a single timer connection will outperform a larger, cheaper kit stretched across more emitters than its pressure can actually support. Budget an afternoon to get spacing and pressure right the first time, and check emitters periodically once it's running, since a clogged emitter is a far more common failure point than the tubing itself.",
+    sources: ["src-pennstate-watering"],
+    relatedContent: [
+      { href: "/systems/planning-a-garden-irrigation-system", label: "Planning a garden irrigation system" },
+      { href: "/calculators/drip-irrigation-planner", label: "Drip irrigation planner" },
+      { href: "/causes/underwatering", label: "Underwatering" }
+    ]
   },
   {
     slug: "copper-fungicide",
@@ -151,8 +161,7 @@ export const tools: ToolEntry[] = [
     description:
       "A basic full-spectrum light fixed a few inches above seedlings does more to prevent legginess than any amount of fertilizer.",
     featuredProduct: "Barrina T5 Grow Lights, 2ft 40W Full Spectrum, 4-Pack",
-    affiliateUrl:
-      "https://www.amazon.com/dp/B0814LNBHH?ref=t_ac_spc_accepted_tile&linkCode=tr1&tag=beardednotary-20&linkId=B0814LNBHH_1785913345685"
+    affiliateUrl: amazonProductUrl("B0814LNBHH")
   },
   {
     slug: "sticky-traps",
